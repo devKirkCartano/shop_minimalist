@@ -36,9 +36,9 @@
                       Password</button>
                   </form>
                   <div class="text-center">
-                    <hr><a class="small" href="register.html">Create an Account!</a>
+                    <hr><a class="small" href="register.php">Create an Account!</a>
                   </div>
-                  <div class="text-center"><a class="small" href="login.html">Already have an account? Login!</a></div>
+                  <div class="text-center"><a class="small" href="login.php">Already have an account? Login!</a></div>
                 </div>
               </div>
             </div>
