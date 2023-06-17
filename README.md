@@ -1,2 +1,2 @@
-# shop-minimalist
-The repository is used for school project purposes and this website uses a template from bootstrap.
+# shop_minimalist
+The repository is used for school project purposes and this website uses a template from bootstrap. It contains the dynamic website version of shop-minimalist hosted on my Github Pages.
