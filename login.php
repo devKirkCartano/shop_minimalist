@@ -28,7 +28,7 @@
                                     <div class="text-center">
                                         <h4 class="text-dark mb-4">Welcome Back!</h4>
                                     </div>
-                                    <form class="user" action="index.html">
+                                    <form class="user" action="index.php">
                                         <div class="mb-3"><input id="exampleInputEmail"
                                                 class="form-control form-control-user" type="email"
                                                 aria-describedby="emailHelp" placeholder="Enter Email Address..."
@@ -52,9 +52,9 @@
                                                 class="fab fa-facebook-f"></i>  Login with Facebook</a>
                                         <hr />
                                     </form>
-                                    <div class="text-center"><a class="small" href="forgot-password.html">Forgot
+                                    <div class="text-center"><a class="small" href="forgot-password.php">Forgot
                                             Password?</a></div>
-                                    <div class="text-center"><a class="small" href="register.html">Create an
+                                    <div class="text-center"><a class="small" href="register.php">Create an
                                             Account!</a></div>
                                 </div>
                             </div>

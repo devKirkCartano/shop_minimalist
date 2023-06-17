@@ -16,7 +16,7 @@
 		<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0"
 			id="sidebar-left">
 			<div class="container-fluid d-flex flex-column p-0"><a
-					class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="index.html"><img
+					class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="index.php"><img
 						id="logo" class="border rounded-circle" src="assets/img/imported_images/logo-circle.png" />
 					<div class="sidebar-brand-icon rotate-n-15"></div>
 					<div class="sidebar-brand-text mx-3"><span class="fs-6 brand-name icon-color brand-name-text">Shop Minimalist
@@ -24,10 +24,10 @@
 				</a>
 				<hr class="sidebar-divider my-0">
 				<ul class="navbar-nav text-light" id="accordionSidebar">
-					<li class="nav-item"><a class="nav-link icon-color" href="index.html"><i
+					<li class="nav-item"><a class="nav-link icon-color" href="index.php"><i
 								class="fas fa-tachometer-alt icon-color"></i><span>Dashboard</span></a></li>
 					<li class="nav-item"></li>
-					<li class="nav-item"><a class="nav-link icon-color" href="table.html"><i
+					<li class="nav-item"><a class="nav-link icon-color" href="table.php"><i
 								class="fas fa-table icon-color"></i><span>Table</span></a></li>
 					<li class="nav-item"></li>
 					<li class="nav-item"></li>
@@ -149,10 +149,10 @@
 											Navarro</span><img class="border rounded-circle img-profile"
 											src="assets/img/imported_images/female_profile.svg"></a>
 									<div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item"
-											href="profile.html"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i> Profile</a><a
-											class="dropdown-item" href="table.html"><i
+											href="profile.php"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i> Profile</a><a
+											class="dropdown-item" href="table.php"><i
 												class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i> Activity log</a>
-										<div class="dropdown-divider"></div><a class="dropdown-item" href="login.html"><i
+										<div class="dropdown-divider"></div><a class="dropdown-item" href="login.php"><i
 												class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i> Logout</a>
 									</div>
 								</div>
