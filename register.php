@@ -1,3 +1,7 @@
+<?php
+  session_start(); // start the session
+  include("connect_db.php"); // include the database connection file
+?>
 <!DOCTYPE html>
 <html lang="en">
 
