@@ -1,6 +1,43 @@
 <?php
   session_start(); // start the session
   include("connect_db.php"); // include the database connection file
+
+  if (isset($_POST['register_btn'])){
+    $fname = mysqli_real_escape_string($conn, $_POST['first_name']);
+    $lname = mysqli_real_escape_string($conn, $_POST['last_name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $password_repeat = mysqli_real_escape_string($conn, $_POST['password_repeat']);
+    $query = "SELECT * FROM users WHERE email = '$email'";
+    $result = mysqli_query($conn, $query);
+
+    if($result)
+      {
+        if( mysqli_num_rows($result) > 0){
+          echo '<script language="javascript">';
+          echo 'alert("Email already exists")';
+          echo '</script>';
+        }
+        else {
+          if($password==$password_repeat) {           //Create User
+              $password=md5($password); //hash password before storing for security purposes
+              $sql="INSERT INTO users (fname, lname, email,password ) VALUES('$fname','$lname','$email','$password')"; 
+              mysqli_query($conn,$sql); 
+              echo '<script language="javascript">';
+              echo 'alert("You are now successfully registered! You will be redirected to login.php")'; // make thid alert to show to 3 seconds
+              echo '</script>'; 
+              echo '<script language="javascript">';
+              echo 'window.location.href = "login.php";'; // Redirect to login.php immediately after the alert
+              echo '</script>';
+
+            } else {
+                  echo '<script language="javascript">';
+                  echo 'alert("Password do not match")';
+                  echo '</script>';
+            }
+        }
+      }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +67,7 @@
               <div class="text-center">
                 <h4 class="text-dark mb-4">Create an Account!</h4>
               </div>
-              <form class="user" method="post">
+              <form class="user" method="post" action="register.php">
                 <div class="row mb-3">
                   <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text"
                       id="exampleFirstName" placeholder="First Name" name="first_name"></div>
