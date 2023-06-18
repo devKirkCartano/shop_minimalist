@@ -44,7 +44,7 @@
                       id="examplePasswordInput" placeholder="Password" name="password"></div>
                   <div class="col-sm-6"><input class="form-control form-control-user" type="password"
                       id="exampleRepeatPasswordInput" placeholder="Repeat Password" name="password_repeat"></div>
-                </div><button class="btn btn-primary d-block btn-user w-100" id="btn-register" type="submit">Register
+                </div><button class="btn btn-primary d-block btn-user w-100" id="btn-register" type="submit" name="register_btn">Register
                   Account</button>
                 <hr><a class="btn btn-primary d-block btn-google btn-user w-100 mb-2" role="button"><i
                     class="fab fa-google"></i>&nbsp; Register with Google</a><a
