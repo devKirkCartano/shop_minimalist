@@ -30,7 +30,7 @@
               <div class="text-center">
                 <h4 class="text-dark mb-4">Create an Account!</h4>
               </div>
-              <form class="user">
+              <form class="user" method="post">
                 <div class="row mb-3">
                   <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text"
                       id="exampleFirstName" placeholder="First Name" name="first_name"></div>
