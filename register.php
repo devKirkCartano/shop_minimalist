@@ -28,7 +28,7 @@
               echo '<script>alert("' . $_SESSION['message'] . '");</script>';
             // Redirect to login.php immediately after the alert
               echo '<script language="javascript">';
-              echo 'window.location.href = "index.php";'; 
+              echo 'window.location.href = "login.php";'; 
               echo '</script>';
 
             } else {
