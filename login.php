@@ -75,10 +75,10 @@
                                         <div class="mb-3"><input id="exampleInputEmail"
                                                 class="form-control form-control-user" type="email"
                                                 aria-describedby="emailHelp" placeholder="Enter Email Address..."
-                                                name="email" /></div>
+                                                name="email" required/></div>
                                         <div class="mb-3"><input id="exampleInputPassword"
                                                 class="form-control form-control-user" type="password"
-                                                placeholder="Password" name="password" /></div>
+                                                placeholder="Password" name="password" required/></div>
                                         <div class="mb-3">
                                             <div class="custom-control custom-checkbox small">
                                                 <div class="form-check"><input id="formCheck-1"
