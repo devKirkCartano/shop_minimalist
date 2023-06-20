@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(  isset($_SESSION['username']) )
+    if(isset($_SESSION['email']) )
     {
     header("location:home.php");
     die();
@@ -82,7 +82,7 @@
                                                         for="formCheck-1">Remember Me</label></div>
                                             </div>
                                         </div><button id="btn-login" class="btn btn-primary d-block btn-user w-100"
-                                            type="submit">Login</button>
+                                            type="submit" name="register_btn">Login</button>
                                         <hr /><a class="btn btn-primary d-block btn-google btn-user w-100 mb-2"
                                             role="button"><i class="fab fa-google"></i>  Login with Google</a><a
                                             class="btn btn-primary d-block btn-facebook btn-user w-100" role="button"><i
