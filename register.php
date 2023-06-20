@@ -25,13 +25,10 @@
               mysqli_query($conn,$sql); 
               // Set session variables
               $_SESSION['message'] = 'You are now successfully registered!';
-              $_SESSION['fname'] = $fname;
-              $_SESSION['lname'] = $lname;
-              $_SESSION['email'] = $email;
               echo '<script>alert("' . $_SESSION['message'] . '");</script>';
             // Redirect to login.php immediately after the alert
               echo '<script language="javascript">';
-              echo 'window.location.href = "login.php";'; 
+              echo 'window.location.href = "index.php";'; 
               echo '</script>';
 
             } else {
