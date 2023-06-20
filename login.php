@@ -1,14 +1,20 @@
 <?php
     session_start();
-
+    
+    // unset email session variable
+    // unset($_SESSION['email']);
     if(isset($_SESSION['email']) )
     {
-    header("location:home.php");
-    die();
+        echo '<script>alert("' . $_SESSION['email'] . ' email is set");</script>';  // for testing purposes
+        header("location: home.php");
+        die();
+    }
+    else {
+        echo '<script>alert(" Email is not set");</script>'; // for testing purposes
     }
     //connect to database
     include("connect_db.php");
-    if($db)
+    if($conn)
     {
     if(isset($_POST['login_btn']))
     {
