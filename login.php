@@ -17,7 +17,7 @@
 
     if($conn)
     {
-        if ($_POST[''])
+        if (isset($_POST['login_btn']))
             {
                 echo '<script>alert(" Connection secure");</script>'; 
             }
@@ -92,7 +92,7 @@
                                     <div class="text-center">
                                         <h4 class="text-dark mb-4">Welcome Back!</h4>
                                     </div>
-                                    <form class="user" action="index.php">
+                                    <form class="user" action="login.php" method="post">
                                         <div class="mb-3"><input id="exampleInputEmail"
                                                 class="form-control form-control-user" type="email"
                                                 aria-describedby="emailHelp" placeholder="Enter Email Address..."
