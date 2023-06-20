@@ -23,17 +23,21 @@
               $password=md5($password); //hash password before storing for security purposes
               $sql="INSERT INTO users (fname, lname, email,password ) VALUES('$fname','$lname','$email','$password')"; 
               mysqli_query($conn,$sql); 
+              // Set session variables
+              $_SESSION['message'] = 'You are now successfully registered!';
+              $_SESSION['fname'] = $fname;
+              $_SESSION['lname'] = $lname;
+              $_SESSION['email'] = $email;
+              echo '<script>alert("' . $_SESSION['message'] . '");</script>';
+            // Redirect to login.php immediately after the alert
               echo '<script language="javascript">';
-              echo 'alert("You are now successfully registered! You will be redirected to login.php")'; // make thid alert to show to 3 seconds
-              echo '</script>'; 
-              echo '<script language="javascript">';
-              echo 'window.location.href = "login.php";'; // Redirect to login.php immediately after the alert
+              echo 'window.location.href = "login.php";'; 
               echo '</script>';
 
             } else {
-                  echo '<script language="javascript">';
-                  echo 'alert("Password do not match")';
-                  echo '</script>';
+                $_SESSION['message'] = 'Password do not match';
+                echo '<script>alert("' . $_SESSION['message'] . '");</script>';
+                unset($_SESSION['message']);
             }
         }
       }
