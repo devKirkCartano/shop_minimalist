@@ -158,14 +158,13 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
 							<li class="nav-item dropdown no-arrow">
 								<div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false"
 										data-bs-toggle="dropdown" href="#"><span
-											class="d-none d-lg-inline me-2 text-gray-600 small title-text" id="name">Andrea Canaliza
-											Navarro</span><img class="border rounded-circle img-profile"
+											class="d-none d-lg-inline me-2 text-gray-600 small title-text" id="name"><?php echo $_SESSION['fname'] . ' ' .$_SESSION['lname']  ?></span><img class="border rounded-circle img-profile"
 											src="assets/img/imported_images/female_profile.svg"></a>
 									<div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item"
 											href="profile.php"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i> Profile</a><a
 											class="dropdown-item" href="table.php"><i
 												class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i> Activity log</a>
-										<div class="dropdown-divider"></div><a class="dropdown-item" href="login.php"><i
+										<div class="dropdown-divider"></div><a class="dropdown-item" href="logout.php"><i
 												class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i> Logout</a>
 									</div>
 								</div>
@@ -265,19 +264,19 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
 													<div class="col">
 														<div class="mb-3"><label class="form-label card-text" for="email"><strong>Email
 																	Address</strong></label><input class="form-control" type="email" id="email"
-																placeholder="user@example.com" name="email"></div>
+																placeholder="<?php echo $_SESSION['email'] ?>" name="email"></div>
 													</div>
 												</div>
 												<div class="row">
 													<div class="col">
 														<div class="mb-3"><label class="form-label card-text" for="first_name"><strong>First
 																	Name</strong></label><input class="form-control" type="text" id="first_name"
-																placeholder="John" name="first_name"></div>
+																placeholder="<?php echo $_SESSION['fname'] ?>" name="first_name"></div>
 													</div>
 													<div class="col">
 														<div class="mb-3"><label class="form-label card-text" for="last_name"><strong>Last
 																	Name</strong></label><input class="form-control" type="text" id="last_name"
-																placeholder="Doe" name="last_name"></div>
+																placeholder="<?php echo $_SESSION['fname'] ?>" name="last_name"></div>
 													</div>
 												</div>
 												<div class="mb-3"><button class="btn btn-primary btn-sm btn-save card-text" type="submit">Save
