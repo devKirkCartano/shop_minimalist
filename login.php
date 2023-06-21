@@ -1,65 +1,60 @@
 <?php
     session_start();
     
-    // unset email session variable
-    // unset($_SESSION['email']);
     if(isset($_SESSION['email']) )
     {
         echo '<script>alert("' . $_SESSION['email'] . ' email is set");</script>';  // for testing purposes
-        header("location: home.php");
+        header("location: index.php");
         die();
     }
-    // else {
-    //     echo '<script>alert(" Email is not set");</script>'; // for testing purposes
-    // }
+    else {
+        echo '<script>alert(" Email is not set");</script>'; // for testing purposes
+    }
     //connect to database
     include("connect_db.php");
 
     if($conn)
     {
-        if (isset($_POST['login_btn']))
-            {
-                echo '<script>alert(" Connection secure");</script>'; 
+        if(isset($_POST['login_btn']))
+        {
+            $email = mysqli_real_escape_string($conn, $_POST['email']);
+            $password = mysqli_real_escape_string($conn, $_POST['password']);
+            $password=md5($password); 
+            // check email if already exists in the database
+            $query = "SELECT * FROM users WHERE email = '$email'";
+            $email_result = mysqli_query($conn, $query);
+            // check if email and password are correct
+            $sql="SELECT * FROM users WHERE  email='$email' AND password='$password'";
+            $result=mysqli_query($conn,$sql);
+            $row = mysqli_fetch_assoc($result);
+
+            if($email_result){
+                if( mysqli_num_rows($email_result) == 0){
+                    $_SESSION['message']="User associated with this email is not found";
+                    echo '<script>alert("'. $_SESSION['message'] . '")</script>';
+                    unset($_SESSION['message']);
+                }
+                else {
+                    if($result) {
+                        if( mysqli_num_rows($result)>=1) { 
+                            $_SESSION['email']=$email;
+                            $_SESSION['fname']=$row['fname'];
+                            $_SESSION['lname']=$row['lname'];
+                            $_SESSION['message']="You are now Logged in ";
+                            echo '<script>alert("'. $_SESSION['message'] . $row["fname"]. '")</script>';
+                            echo '<script>alert("The email '. $row["email"]. ' is set")</script>';
+                            echo '<script>window.location.href = "index.php";</script>';
+                            unset($_SESSION['message']);
+                        } 
+                        else {
+                            $_SESSION['message']="Password is incorrect";
+                            echo '<script>alert("'. $_SESSION['message'] . '")</script>';
+                            unset($_SESSION['message']);
+                        }
+                    }   
+                }
             }
-        // if(isset($_POST['login_btn']))
-        // {
-        //     $fname = mysqli_real_escape_string($conn, $_POST['first_name']);
-        //     $lname = mysqli_real_escape_string($conn, $_POST['last_name']);
-        //     $email = mysqli_real_escape_string($conn, $_POST['email']);
-        //     $password = mysqli_real_escape_string($conn, $_POST['password']);
-        //     //
-        //     // $username=mysqli_real_escape_string($conn,$_POST['username']);
-        //     // $password=mysqli_real_escape_string($coon,$_POST['password']);
-        //     $password=md5($password); //Remember we hashed password before storing last time
-        //     $sql="SELECT * FROM users WHERE  email='$email' AND password='$password'";
-        //     $result=mysqli_query($conn,$sql);
-        //     // check email if already exists in the database
-        //     $query = "SELECT * FROM users WHERE email = '$email'";
-        //     $email_result = mysqli_query($conn, $query);
-        //     // check if email does not exist in the database
-        //     if($email_result)
-        //     {
-        //         if( mysqli_num_rows($email_result) == 0){
-        //             echo '<script language="javascript">';
-        //             echo 'alert("Email does not exist")';
-        //             echo '</script>';
-        //         }
-        //     }
-        //     if($result)
-        //     {
-            
-        //         if( mysqli_num_rows($result)>=1)
-        //         {
-        //             $_SESSION['message']="You are now Loggged In";
-        //             $_SESSION['username']=$username;
-        //             header("location:home.php");
-        //         }
-        //     else
-        //     {
-        //             $_SESSION['message']="Username and Password combination incorrect";
-        //     }
-        //     }
-        // }
+        }
     }
 ?>
 <!DOCTYPE html>
