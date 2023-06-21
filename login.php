@@ -7,9 +7,6 @@
         header("location: index.php");
         die();
     }
-    else {
-        echo '<script>alert(" Email is not set");</script>'; // for testing purposes
-    }
     //connect to database
     include("connect_db.php");
 
@@ -42,7 +39,6 @@
                             $_SESSION['lname']=$row['lname'];
                             $_SESSION['message']="You are now Logged in ";
                             echo '<script>alert("'. $_SESSION['message'] . $row["fname"]. '")</script>';
-                            echo '<script>alert("The email '. $row["email"]. ' is set")</script>';
                             echo '<script>window.location.href = "index.php";</script>';
                             unset($_SESSION['message']);
                         } 
