@@ -276,7 +276,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
 													<div class="col">
 														<div class="mb-3"><label class="form-label card-text" for="last_name"><strong>Last
 																	Name</strong></label><input class="form-control" type="text" id="last_name"
-																placeholder="<?php echo $_SESSION['fname'] ?>" name="last_name"></div>
+																placeholder="<?php echo $_SESSION['lname'] ?>" name="last_name"></div>
 													</div>
 												</div>
 												<div class="mb-3"><button class="btn btn-primary btn-sm btn-save card-text" type="submit">Save
