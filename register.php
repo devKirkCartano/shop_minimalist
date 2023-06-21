@@ -24,7 +24,7 @@
               $sql="INSERT INTO users (fname, lname, email,password ) VALUES('$fname','$lname','$email','$password')"; 
               mysqli_query($conn,$sql); 
               // Set session variables
-              $_SESSION['message'] = 'You are now successfully registered!';
+              $_SESSION['message'] = 'You are now successfully registered!\nYou will be redirected to the login page.';
               echo '<script>alert("' . $_SESSION['message'] . '");</script>';
             // Redirect to login.php immediately after the alert
               echo '<script language="javascript">';
