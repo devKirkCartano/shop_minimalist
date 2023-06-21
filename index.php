@@ -184,7 +184,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                                 class="dropdown-item" href="table.php"><i
                                                     class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i> Activity log</a>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="logout.php" name="logout_btn"><i
+                                            <a class="dropdown-item" href="logout.php"><i
                                                     class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i> Logout</a>
                                         </div>
                                     </div>
