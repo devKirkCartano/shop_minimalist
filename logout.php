@@ -1,5 +1,5 @@
 <?php
-session_start(); //
+session_start(); //to ensure you are using same session
 session_destroy(); // destroy entire session
 unset($_SESSION['fname']);
 unset($_SESSION['lname']);
