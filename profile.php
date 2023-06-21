@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+include("connect_db.php");
+
+
+?>
+
+<?php
+if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['email']))
+{
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -358,3 +371,8 @@
 </body>
 
 </html>
+<?php
+} else {
+    header("location:login.php");
+}
+?>
