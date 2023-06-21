@@ -36,7 +36,7 @@
                             $_SESSION['email']=$email;
                             $_SESSION['fname']=$row['fname'];
                             $_SESSION['lname']=$row['lname'];
-                            $_SESSION['message']="You are now Logged in ";
+                            $_SESSION['message']="You are now logged in ";
                             echo '<script>alert("'. $_SESSION['message'] . $row["fname"]. '")</script>';
                             echo '<script>window.location.href = "index.php";</script>';
                             unset($_SESSION['message']);
