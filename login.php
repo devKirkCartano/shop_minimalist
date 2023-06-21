@@ -3,7 +3,6 @@
     
     if(isset($_SESSION['email']) )
     {
-        echo '<script>alert("' . $_SESSION['email'] . ' email is set");</script>';  // for testing purposes
         header("location: index.php");
         die();
     }
