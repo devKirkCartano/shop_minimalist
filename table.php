@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+include("connect_db.php");
+
+
+?>
+
+<?php
+if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['email']))
+{
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -161,7 +174,7 @@
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
                                         aria-expanded="false" data-bs-toggle="dropdown" href="#"><span
                                             class="d-none d-lg-inline me-2 text-gray-600 small title-text"
-                                            id="name">Andrea Canaliza Navarro</span><img
+                                            id="name"><?php echo $_SESSION['fname'] . ' ' .$_SESSION['lname']  ?></span><img
                                             class="border rounded-circle img-profile"
                                             src="assets/img/imported_images/female_profile.svg"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a
@@ -170,7 +183,7 @@
                                             class="dropdown-item" href="table.php"><i
                                                 class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i> Activity log</a>
                                         <div class="dropdown-divider"></div><a class="dropdown-item"
-                                            href="login.php"><i
+                                            href="logout.php"><i
                                                 class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i> Logout</a>
                                     </div>
                                 </div>
@@ -386,3 +399,8 @@
 </body>
 
 </html>
+<?php
+} else {
+    header("location:login.php");
+}
+?>
