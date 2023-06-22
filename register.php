@@ -1,37 +1,41 @@
 <?php
   session_start(); // start the session
-  include("connect_db.php"); // include the database connection file
+  include("connect_db.php"); // include the database connection file to connect to the database
 
+  // if register button is clicked
   if (isset($_POST['register_btn'])){
-    $fname = mysqli_real_escape_string($conn, $_POST['first_name']);
-    $lname = mysqli_real_escape_string($conn, $_POST['last_name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $password_repeat = mysqli_real_escape_string($conn, $_POST['password_repeat']);
-    $query = "SELECT * FROM users WHERE email = '$email'";
-    $result = mysqli_query($conn, $query);
+    $fname = mysqli_real_escape_string($conn, $_POST['first_name']); // store the first name
+    $lname = mysqli_real_escape_string($conn, $_POST['last_name']); // store the last name
+    $email = mysqli_real_escape_string($conn, $_POST['email']); // store the email
+    $password = mysqli_real_escape_string($conn, $_POST['password']); // store the password
+    $password_repeat = mysqli_real_escape_string($conn, $_POST['password_repeat']);  // store the password repeat
+    $query = "SELECT * FROM users WHERE email = '$email'"; // check if email already exists
+    $result = mysqli_query($conn, $query); // execute the query
 
-    if($result)
+    if($result) // if query is executed successfully
       {
         if( mysqli_num_rows($result) > 0){
+          // if email already exists, show an alert
           echo '<script language="javascript">';
           echo 'alert("Email already exists")';
           echo '</script>';
         }
         else {
-          if($password==$password_repeat) {           //Create User
+          if($password==$password_repeat) { 
+              // if password and password repeat are the same, insert the data to the database          
               $password=md5($password); //hash password before storing for security purposes
-              $sql="INSERT INTO users (fname, lname, email,password ) VALUES('$fname','$lname','$email','$password')"; 
-              mysqli_query($conn,$sql); 
-              // Set session variables
-              $_SESSION['message'] = 'You are now successfully registered!\nYou will be redirected to the login page.';
+              $sql="INSERT INTO users (fname, lname, email,password ) VALUES('$fname','$lname','$email','$password')";  // query to insert data
+              mysqli_query($conn,$sql); // execute the query
+              // Set session message variable
+              $_SESSION['message'] = 'You are now successfully registered!\nYou will be redirected to the login page.'; 
               echo '<script>alert("' . $_SESSION['message'] . '");</script>';
-            // Redirect to login.php immediately after the alert
+              // Redirect to login.php immediately after the message
               echo '<script language="javascript">';
-              echo 'window.location.href = "login.php";'; 
+              echo 'window.location.href = "login.php";'; // redirects to login.php
               echo '</script>';
 
             } else {
+                // if password and password repeat are not the same, show an alert
                 $_SESSION['message'] = 'Password do not match';
                 echo '<script>alert("' . $_SESSION['message'] . '");</script>';
                 unset($_SESSION['message']);
