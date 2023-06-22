@@ -1,50 +1,50 @@
 <?php
     session_start();
-    
-    if(isset($_SESSION['email']) )
+    // check if user is already logged in
+    if(isset($_SESSION['email']) ) // if user is already logged in, redirect to index.php
     {
-        header("location: index.php");
+        header("location: index.php"); // redirect to index.php(home page), because user is not supposed to access login.php after logging in
         die();
     }
     //connect to database
     include("connect_db.php");
 
-    if($conn)
+    if($conn) // if connection to database is successful
     {
-        if(isset($_POST['login_btn']))
+        if(isset($_POST['login_btn'])) // if login button is clicked
         {
-            $email = mysqli_real_escape_string($conn, $_POST['email']);
-            $password = mysqli_real_escape_string($conn, $_POST['password']);
-            $password=md5($password); 
+            $email = mysqli_real_escape_string($conn, $_POST['email']); // store the email
+            $password = mysqli_real_escape_string($conn, $_POST['password']); // store the password
+            $password=md5($password);  // hash the password
             // check email if already exists in the database
-            $query = "SELECT * FROM users WHERE email = '$email'";
-            $email_result = mysqli_query($conn, $query);
+            $query = "SELECT * FROM users WHERE email = '$email'"; // query to check email
+            $email_result = mysqli_query($conn, $query); // execute the query
             // check if email and password are correct
-            $sql="SELECT * FROM users WHERE  email='$email' AND password='$password'";
-            $result=mysqli_query($conn,$sql);
-            $row = mysqli_fetch_assoc($result);
+            $sql="SELECT * FROM users WHERE  email='$email' AND password='$password'"; // query to check email and password
+            $result=mysqli_query($conn,$sql); // execute the query
+            $row = mysqli_fetch_assoc($result); // fetch the result, or data in a row
 
-            if($email_result){
-                if( mysqli_num_rows($email_result) == 0){
+            if($email_result){ // if query is executed successfully
+                if( mysqli_num_rows($email_result) == 0){ // if email is not found in the database
                     $_SESSION['message']="User associated with this email is not found";
                     echo '<script>alert("'. $_SESSION['message'] . '")</script>';
-                    unset($_SESSION['message']);
+                    unset($_SESSION['message']); // unset the session message
                 }
                 else {
-                    if($result) {
-                        if( mysqli_num_rows($result)>=1) { 
-                            $_SESSION['email']=$email;
-                            $_SESSION['fname']=$row['fname'];
-                            $_SESSION['lname']=$row['lname'];
-                            $_SESSION['message']="You are now logged in, ";
-                            echo '<script>alert("'. $_SESSION['message'] . $row["fname"]. '")</script>';
+                    if($result) { // if query is executed successfully
+                        if( mysqli_num_rows($result)>=1) { // if email and password are correct
+                            $_SESSION['email']=$email; // store the email in session
+                            $_SESSION['fname']=$row['fname']; // store the first name in session
+                            $_SESSION['lname']=$row['lname']; // store the last name in session
+                            $_SESSION['message']="You are now logged in, "; // store the message in session
+                            echo '<script>alert("'. $_SESSION['message'] . $row["fname"]. '")</script>'; // display the message
                             echo '<script>window.location.href = "index.php";</script>';
-                            unset($_SESSION['message']);
+                            unset($_SESSION['message']); // unset the session message
                         } 
-                        else {
+                        else { // if email and password are incorrect
                             $_SESSION['message']="Password is incorrect";
-                            echo '<script>alert("'. $_SESSION['message'] . '")</script>';
-                            unset($_SESSION['message']);
+                            echo '<script>alert("'. $_SESSION['message'] . '")</script>'; // display the message
+                            unset($_SESSION['message']); // unset the session message
                         }
                     }   
                 }
