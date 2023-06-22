@@ -10,8 +10,6 @@
     $conn = mysqli_connect($db_server_name, $db_user, $db_password, $db_name);
   } catch (mysqli_sql_exception){
     // if cannot connect to database, show an alert
-    echo '<script language="javascript">';
-    echo 'alert("Cannot connect to database!")';
-    echo '</script>';
+    echo '<script>alert("Cannot connect to database!")</script>';
   }
 ?>
