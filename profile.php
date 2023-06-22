@@ -1,12 +1,14 @@
 <?php
-session_start();
+session_start(); // start session with the user who logged in
 
-include("connect_db.php");
+include("connect_db.php"); // include connection to database
 
 
 ?>
 
 <?php
+
+// if user is logged in, it means that the session variables are set or contain values. Then display the profile page
 if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['email']))
 {
     
@@ -372,6 +374,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
 </html>
 <?php
 } else {
+		// user is not logged in, redirect to login page
     header("location:login.php");
 }
 ?>
