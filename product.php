@@ -202,43 +202,37 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4 title-page-text">Product</h3>
                 </div>
-                <form action="product.php" method="post"><!-- Start: 1 Row 3 Columns -->
+                <form action="product.php" method="get"><!-- Start: 1 Row 3 Columns -->
                     <div class="container">
                         <div class="row" style="margin-top: 50px;">
                             <div class="col-md-4">
-                                <select class="form-select" name="type">
-                                    <optgroup label="Type">
-                                        <option value="" selected>-- Select Type --</option>
-                                        <option value="side-table">Side Table</option>
-                                        <option value="wooden-chair">Wooden Chair</option>
-                                        <option value="bed-frame">Bed Frame</option>
-                                        <option value="cabinet-wardrobe">Cabinets / Wardrobe</option>
-                                        <option value="study-table">Study Table</option>
-                                        <option value="dining-table">Dining Table</option>
-                                    </optgroup>
+                                <select class="form-select" name="type" required>
+                                    <option value="" disabled selected>-- Select Type --</option>
+                                    <option value="side-table">Side Table</option>
+                                    <option value="wooden-chair">Wooden Chair</option>
+                                    <option value="bed-frame">Bed Frame</option>
+                                    <option value="cabinet-wardrobe">Cabinets / Wardrobe</option>
+                                    <option value="study-table">Study Table</option>
+                                    <option value="dining-table">Dining Table</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <select class="form-select" name="model">
-                                    <optgroup label="Model">
-                                        <option value="" selected>-- Select Year Model --</option>
-                                        <option value="2018">2018</option>
-                                        <option value="2019">2019</option>
-                                        <option value="2020">2020</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2023">2023</option>
-                                    </optgroup>
+                                <select class="form-select" name="model" required>
+                                    <option value="" disabled selected>-- Select Year Model --</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <select class="form-select" name="color">
-                                    <optgroup label="Color">
-                                        <option value="" selected>-- Select Color -- </option>
-                                        <option value="brown">Brown</option>
-                                        <option value="white">White</option>
-                                        <option value="black">Black</option>
-                                    </optgroup>
+                                <select class="form-select" name="color" required>
+                                    <option value="" disabled selected>-- Select Color -- </option>
+                                    <option value="brown">Brown</option>
+                                    <option value="white">White</option>
+                                    <option value="black">Black</option>
                                 </select>
                             </div>
                         </div>
@@ -247,16 +241,14 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                         <div class="row" style="margin-top: 50px;">
                             <div class="col-md-4">
                                 <input class="form-control" type="number" name="quantity" min="0" max="100"
-                                    placeholder="-- Quantity --">
+                                    placeholder="-- Quantity --" required>
                             </div>
                             <div class="col-md-4">
-                                <select class="form-select" name="status">
-                                    <optgroup label="Status">
-                                        <option value="" selected>-- Select Status</option>
-                                        <option value="new-arrival">New Arrival</option>
-                                        <option value="restock">Restock</option>
-                                        <option value="out-of-stock">Out of Stock</option>
-                                    </optgroup>
+                                <select class="form-select" name="status" required>
+                                    <option value="" selected>-- Select Status</option>
+                                    <option value="new-arrival">New Arrival</option>
+                                    <option value="restock">Restock</option>
+                                    <option value="out-of-stock">Out of Stock</option>
                                 </select>
                             </div>
                         </div>
