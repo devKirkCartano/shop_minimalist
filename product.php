@@ -1,3 +1,18 @@
+<?php
+session_start(); // start session with the user who logged in
+
+include("connect_db.php"); // include connection to database
+
+
+?>
+
+<?php
+
+// if user is logged in, it means that the session variables are set or contain values. Then display the dashboard
+if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['email']))
+{
+    
+?>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -176,7 +191,7 @@
                                                 class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i> Profile</a><a
                                             class="dropdown-item" href="inventory.php"><i
                                                 class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i> Activity log</a>
-                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="login.php"><i
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="logout.php"><i
                                                 class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i> Logout</a>
                                     </div>
                                 </div>
@@ -283,3 +298,9 @@
 </body>
 
 </html>
+<?php
+} else {
+    // user is not logged in, redirect to login page
+    header("location:login.php");
+}
+?>
