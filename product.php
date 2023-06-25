@@ -219,12 +219,12 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                             <div class="col-md-4">
                                 <select class="form-select" name="model" required>
                                     <option value="" disabled selected>-- Select Year Model --</option>
-                                    <option value="2018">2018</option>
-                                    <option value="2019">2019</option>
-                                    <option value="2020">2020</option>
-                                    <option value="2021">2021</option>
-                                    <option value="2022">2022</option>
-                                    <option value="2023">2023</option>
+                                    <option value="SHM-A">SHM-A</option>
+                                    <option value="SHM-B">SHM-B</option>
+                                    <option value="SHM-C">SHM-C</option>
+                                    <option value="SHM-D">SHM-D</option>
+                                    <option value="SHM-E">SHM-E</option>
+                                    <option value="SHM-F">SHM-F</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
