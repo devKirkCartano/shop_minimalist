@@ -204,9 +204,9 @@
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <select class="form-select">
+                                <select class="form-select" name="model">
                                     <optgroup label="Model">
-                                        <option value="" selected="">-- Select Year Model --</option>
+                                        <option value="" selected>-- Select Year Model --</option>
                                         <option value="2018">2018</option>
                                         <option value="2019">2019</option>
                                         <option value="2020">2020</option>
@@ -217,9 +217,9 @@
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <select class="form-select">
+                                <select class="form-select" name="color">
                                     <optgroup label="Color">
-                                        <option value="" selected="">-- Select Color -- </option>
+                                        <option value="" selected>-- Select Color -- </option>
                                         <option value="brown">Brown</option>
                                         <option value="white">White</option>
                                         <option value="black">Black</option>
@@ -236,8 +236,8 @@
                             </div>
                             <div class="col-md-4">
                                 <select class="form-select">
-                                    <optgroup label="Status">
-                                        <option value="" selected="">-- Select Status</option>
+                                    <optgroup label="Status" name="status">
+                                        <option value="" selected>-- Select Status</option>
                                         <option value="new-arrival">New Arrival</option>
                                         <option value="restock">Restock</option>
                                         <option value="out-of-stock">Out of Stock</option>
