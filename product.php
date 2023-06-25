@@ -3,7 +3,17 @@ session_start(); // start session with the user who logged in
 
 include("connect_db.php"); // include connection to database
 
-
+if ($conn) {
+    if (isset($_POST['submit-btn'])){
+        $type = mysqli_real_escape_string($conn, $_POST['type']);
+        $model = mysqli_real_escape_string($conn, $_POST['model']);
+        $color = mysqli_real_escape_string($conn, $_POST['color']);
+        $quantity = mysqli_real_escape_string($conn, $_POST['quantity']);
+        $status = mysqli_real_escape_string($conn, $_POST['status']);
+        $sql = "INSERT INTO products (type, model, color, quantity, status ) VALUES('$type','$model','$color','$quantity', '$status')"; // query to insert data
+        mysqli_query($conn, $sql); // execute the query
+    }
+}
 ?>
 
 <?php
@@ -208,12 +218,12 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                             <div class="col-md-4">
                                 <select class="form-select" name="type" required>
                                     <option value="" disabled selected>-- Select Type --</option>
-                                    <option value="side-table">Side Table</option>
-                                    <option value="wooden-chair">Wooden Chair</option>
-                                    <option value="bed-frame">Bed Frame</option>
-                                    <option value="cabinet-wardrobe">Cabinets / Wardrobe</option>
-                                    <option value="study-table">Study Table</option>
-                                    <option value="dining-table">Dining Table</option>
+                                    <option value="Side Table">Side Table</option>
+                                    <option value="Wooden Chair">Wooden Chair</option>
+                                    <option value="Bed Frame">Bed Frame</option>
+                                    <option value="Cabinet / Wardrobe">Cabinet / Wardrobe</option>
+                                    <option value="Study Table">Study Table</option>
+                                    <option value="Dining Table">Dining Table</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
@@ -230,9 +240,9 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                             <div class="col-md-4">
                                 <select class="form-select" name="color" required>
                                     <option value="" disabled selected>-- Select Color -- </option>
-                                    <option value="brown">Brown</option>
-                                    <option value="white">White</option>
-                                    <option value="black">Black</option>
+                                    <option value="Brown">Brown</option>
+                                    <option value="White">White</option>
+                                    <option value="Black">Black</option>
                                 </select>
                             </div>
                         </div>
@@ -240,14 +250,14 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                     <div class="container">
                         <div class="row" style="margin-top: 50px;">
                             <div class="col-md-4">
-                                <input class="form-control" type="number" name="quantity" min="0" max="100"
+                                <input class="form-control" type="number" name="quantity" min="1" max="100"
                                     placeholder="-- Quantity --" required>
                             </div>
                             <div class="col-md-4">
                                 <select class="form-select" name="status" required>
-                                    <option value="" selected>-- Select Status</option>
-                                    <option value="new-arrival">New Arrival</option>
-                                    <option value="restock">Restock</option>
+                                    <option value="" disabled selected>-- Select Status</option>
+                                    <option value="New Arrival">New Arrival</option>
+                                    <option value="Restock">Restock</option>
                                 </select>
                             </div>
                         </div>
