@@ -43,7 +43,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                         <li class="nav-item"><a class="nav-link active icon-color" href="index.php"><i
                                     class="fas fa-tachometer-alt icon-color"></i><span>Dashboard</span></a></li>
                         <li class="nav-item"></li>
-                        <li class="nav-item"><a class="nav-link icon-color" href="inventory.php"><svg
+                        <li class="nav-item"><a class="nav-link icon-color" href="product.php"><svg
                                 xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="1em"
                                 viewBox="0 0 24 24" width="1em" fill="currentColor" class="icon-color">
                                 <rect fill="none" height="24" width="24"></rect>
