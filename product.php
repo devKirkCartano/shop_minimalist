@@ -248,7 +248,6 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                     <option value="" selected>-- Select Status</option>
                                     <option value="new-arrival">New Arrival</option>
                                     <option value="restock">Restock</option>
-                                    <option value="out-of-stock">Out of Stock</option>
                                 </select>
                             </div>
                         </div>
