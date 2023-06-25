@@ -19,7 +19,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Table - Shop Minimalist</title>
+    <title> Inventory List - Shop Minimalist</title>
     <link rel="icon" type="image/png" sizes="1946x1946" href="assets/img/imported_images/logo-circle.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
