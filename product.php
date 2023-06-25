@@ -191,9 +191,9 @@
                     <div class="container">
                         <div class="row" style="margin-top: 50px;">
                             <div class="col-md-4">
-                                <select class="form-select">
+                                <select class="form-select" name="type">
                                     <optgroup label="Type">
-                                        <option value="" selected="">-- Select Type --</option>
+                                        <option value="" selected>-- Select Type --</option>
                                         <option value="side-table">Side Table</option>
                                         <option value="wooden-chair">Wooden Chair</option>
                                         <option value="bed-frame">Bed Frame</option>
