@@ -202,7 +202,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4 title-page-text">Product</h3>
                 </div>
-                <form><!-- Start: 1 Row 3 Columns -->
+                <form action="product.php" method="post"><!-- Start: 1 Row 3 Columns -->
                     <div class="container">
                         <div class="row" style="margin-top: 50px;">
                             <div class="col-md-4">
