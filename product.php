@@ -235,8 +235,8 @@
                                     placeholder="-- Quantity --">
                             </div>
                             <div class="col-md-4">
-                                <select class="form-select">
-                                    <optgroup label="Status" name="status">
+                                <select class="form-select" name="status">
+                                    <optgroup label="Status">
                                         <option value="" selected>-- Select Status</option>
                                         <option value="new-arrival">New Arrival</option>
                                         <option value="restock">Restock</option>
