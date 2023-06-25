@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title> Product - Shop Minimalist</title>
-    <link rel="icon" type="image/png" sizes="1946x1946"
-        href="assets/img/imported_images/logo-circle.png">
+    <link rel="icon" type="image/png" sizes="1946x1946" href="assets/img/imported_images/logo-circle.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
@@ -177,8 +176,7 @@
                                                 class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i> Profile</a><a
                                             class="dropdown-item" href="inventory.php"><i
                                                 class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i> Activity log</a>
-                                        <div class="dropdown-divider"></div><a class="dropdown-item"
-                                            href="login.php"><i
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="login.php"><i
                                                 class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i> Logout</a>
                                     </div>
                                 </div>
@@ -192,7 +190,8 @@
                 <form><!-- Start: 1 Row 3 Columns -->
                     <div class="container">
                         <div class="row" style="margin-top: 50px;">
-                            <div class="col-md-4"><select class="form-select">
+                            <div class="col-md-4">
+                                <select class="form-select">
                                     <optgroup label="Type">
                                         <option value="" selected="">-- Select Type --</option>
                                         <option value="side-table">Side Table</option>
@@ -202,8 +201,10 @@
                                         <option value="study-table">Study Table</option>
                                         <option value="dining-table">Dining Table</option>
                                     </optgroup>
-                                </select></div>
-                            <div class="col-md-4"><select class="form-select">
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select">
                                     <optgroup label="Model">
                                         <option value="" selected="">-- Select Year Model --</option>
                                         <option value="2018">2018</option>
@@ -213,35 +214,43 @@
                                         <option value="2022">2022</option>
                                         <option value="2023">2023</option>
                                     </optgroup>
-                                </select></div>
-                            <div class="col-md-4"><select class="form-select">
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select">
                                     <optgroup label="Color">
                                         <option value="" selected="">-- Select Color -- </option>
                                         <option value="brown">Brown</option>
                                         <option value="white">White</option>
                                         <option value="black">Black</option>
                                     </optgroup>
-                                </select></div>
+                                </select>
+                            </div>
                         </div>
                     </div><!-- End: 1 Row 3 Columns --><!-- Start: 1 Row 3 Columns -->
                     <div class="container">
                         <div class="row" style="margin-top: 50px;">
-                            <div class="col-md-4"><input class="form-control" type="number" name="quantity" min="0"
-                                    max="100" placeholder="-- Quantity --"></div>
-                            <div class="col-md-4"><select class="form-select">
+                            <div class="col-md-4">
+                                <input class="form-control" type="number" name="quantity" min="0" max="100"
+                                    placeholder="-- Quantity --">
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select">
                                     <optgroup label="Status">
                                         <option value="" selected="">-- Select Status</option>
                                         <option value="new-arrival">New Arrival</option>
                                         <option value="restock">Restock</option>
                                         <option value="out-of-stock">Out of Stock</option>
                                     </optgroup>
-                                </select></div>
+                                </select>
+                            </div>
                         </div>
                     </div><!-- End: 1 Row 3 Columns -->
                     <div class="justify-content-xxl-start align-items-xxl-end"
                         style="display: flex;flex-direction: row-reverse;margin: 0px;margin-right: 25px;margin-top: 200px;margin-bottom: 25px;">
                         <input class="btn btn-primary btn-save title-page-text" type="submit"
-                            style="position: relative;display: flex;"></div>
+                            style="position: relative;display: flex;">
+                    </div>
                 </form>
             </div>
             <footer class="bg-white sticky-footer">
