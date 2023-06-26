@@ -12,6 +12,8 @@ if ($conn) {
         $status = mysqli_real_escape_string($conn, $_POST['status']);
         $sql = "INSERT INTO products (type, model, color, quantity, status ) VALUES('$type','$model','$color','$quantity', '$status')"; // query to insert data
         mysqli_query($conn, $sql); // execute the query
+        $_SESSION['message'] = 'Product data has been added successfully!';
+        echo '<script>alert("' . $_SESSION['message'] . '");</script>';
     }
 }
 ?>
