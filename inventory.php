@@ -199,7 +199,8 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                         </ul>
                     </div>
                 </nav>
-                <div class="container-fluid">
+                    
+                <!-- <div class="container-fluid">
                     <h3 class="text-dark mb-4 title-page-text">Team</h3>
                     <div class="card shadow table-text" id="table-bg">
                         <div class="card-header py-3" id="table-header">
@@ -373,7 +374,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <footer class="bg-white sticky-footer">
                 <div class="text-center my-auto copyright"><span class="copyright-text"><a
