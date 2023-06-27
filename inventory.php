@@ -228,6 +228,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                             <th>Color</th>
                                             <th>Quantity</th>
                                             <th>Status</th>
+                                            <th>Timestamp</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -237,6 +238,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                             <th>Color</th>
                                             <th>Quantity</th>
                                             <th>Status</th>
+                                            <th>Timestamp</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -250,7 +252,8 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                                         <td><?php echo $row['color'] ?></td>
                                                         <td><?php echo $row['quantity'] ?></td>
                                                         <td><?php echo $row['status'] ?></td>
-                                                        
+                                                        <td><?php echo $row['timestamp'] ?>
+                                                        </td>
                                                     </tr>
                                             <?php
                                                 }
