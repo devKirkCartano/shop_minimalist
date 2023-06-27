@@ -211,11 +211,11 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h3 class="text-dark mb-4 title-page-text">Tables</h3>
+                    <h3 class="text-dark mb-4 title-page-text">Inventory</h3>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4" id="table-bg">
                         <div class="card-header py-3" id="table-header">
-                            <h6 class="m-0 font-weight-bold text-primary card-text">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary card-text">Product</h6>
                         </div>
                         <div class="card-body card-text">
                             <div class="table-responsive">
