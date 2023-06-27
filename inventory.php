@@ -24,6 +24,17 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+            <!-- Custom fonts for this template -->
+    <link href="assets/fonts/all.min.css" rel="stylesheet" type="text/css">
+    <!-- <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet"> -->
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="assets/css/sb-admin-2.min.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this page -->
+    <link href="assets/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -902,6 +913,18 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/script.min.js?h=bdf36300aae20ed8ebca7e88738d5267"></script>
     <script src="assets/js/script.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="assets/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="assets/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="assets/js/datatables-demo.js"></script>
 
 </body>
 
