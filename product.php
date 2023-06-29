@@ -228,7 +228,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                             </div>
                             <div class="col-md-4">
                                 <select class="form-select" name="model" required>
-                                    <option value="" disabled selected>-- Select Year Model --</option>
+                                    <option value="" disabled selected>-- Select Model --</option>
                                     <option value="SHM-A">SHM-A</option>
                                     <option value="SHM-B">SHM-B</option>
                                     <option value="SHM-C">SHM-C</option>
