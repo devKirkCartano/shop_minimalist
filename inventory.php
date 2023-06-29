@@ -3,13 +3,13 @@ session_start(); // start session with the user who logged in
 
 require_once("connect_db.php"); // include connection to database
 
-$sql = "SELECT * FROM products"; // select all from product table
+$sql = "SELECT * FROM products"; // select all from products table
 $result = mysqli_query($conn, $sql); // execute query
 ?>
 
 <?php
 
-// if user is logged in, it means that the session variables are set or contain values. Then display the table page
+// if user is logged in, it means that the session variables are set or contain values. Then display the page
 if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['email']))
 {
     
@@ -234,6 +234,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                     </tfoot>
                                     <tbody>
                                         <?php
+                                            // display all products from database using their row id
                                             if (mysqli_num_rows($result) > 0){
                                                 while($row = mysqli_fetch_assoc($result)){
                                             ?>
@@ -249,7 +250,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                             <?php
                                                 }
                                             }
-                                                mysqli_close($conn);
+                                                mysqli_close($conn); // close connection
                                             ?>
                                     </tbody>
                                 </table>
