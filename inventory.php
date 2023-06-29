@@ -25,9 +25,6 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
-            <!-- Custom fonts for this template -->
-    <link href="assets/fonts/all.min.css" rel="stylesheet" type="text/css">
-
     <!-- Custom styles for this page -->
     <link href="assets/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
