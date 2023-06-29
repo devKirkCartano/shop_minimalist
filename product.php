@@ -5,14 +5,14 @@ require_once("connect_db.php"); // include connection to database
 
 if ($conn) {
     if (isset($_POST['submit-btn'])){
-        $type = mysqli_real_escape_string($conn, $_POST['type']);
-        $model = mysqli_real_escape_string($conn, $_POST['model']);
-        $color = mysqli_real_escape_string($conn, $_POST['color']);
-        $quantity = mysqli_real_escape_string($conn, $_POST['quantity']);
-        $status = mysqli_real_escape_string($conn, $_POST['status']);
+        $type = mysqli_real_escape_string($conn, $_POST['type']); // store the type
+        $model = mysqli_real_escape_string($conn, $_POST['model']); // store the model
+        $color = mysqli_real_escape_string($conn, $_POST['color']); // store the color
+        $quantity = mysqli_real_escape_string($conn, $_POST['quantity']); // store the quantity
+        $status = mysqli_real_escape_string($conn, $_POST['status']); // store the status
         $sql = "INSERT INTO products (type, model, color, quantity, status ) VALUES('$type','$model','$color','$quantity', '$status')"; // query to insert data
         mysqli_query($conn, $sql); // execute the query
-        $_SESSION['message'] = 'Product data has been added successfully!';
+        $_SESSION['message'] = 'Product data has been added successfully!'; // store the message in session
         echo '<script>alert("' . $_SESSION['message'] . '");</script>';
     }
 }
@@ -20,7 +20,7 @@ if ($conn) {
 
 <?php
 
-// if user is logged in, it means that the session variables are set or contain values. Then display the dashboard
+// if user is logged in, it means that the session variables are set or contain values. Then display the page
 if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['email']))
 {
     
