@@ -304,4 +304,6 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
     // user is not logged in, redirect to login page
     header("location:login.php");
 }
+// Close connection
+mysqli_close($conn);
 ?>

@@ -43,6 +43,8 @@
         }
       }
   }
+// Close connection
+mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
