@@ -1,7 +1,7 @@
 <?php
 session_start(); // start session with the user who logged in
 
-include("connect_db.php"); // include connection to database
+require_once("connect_db.php"); // include connection to database
 
 if ($conn) {
     if (isset($_POST['submit-btn'])){

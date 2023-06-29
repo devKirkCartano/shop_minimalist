@@ -7,7 +7,7 @@
         die();
     }
     //connect to database
-    include("connect_db.php");
+    require_once("connect_db.php");
 
     if($conn) // if connection to database is successful
     {

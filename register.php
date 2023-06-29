@@ -1,6 +1,6 @@
 <?php
   session_start(); // start the session
-  include("connect_db.php"); // include the database connection file to connect to the database
+  require_once("connect_db.php"); // include the database connection file to connect to the database
 
   // if register button is clicked
   if (isset($_POST['register_btn'])){
