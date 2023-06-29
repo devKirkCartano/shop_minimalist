@@ -922,5 +922,7 @@ a:hover {
 .dropdown-item:active {
   color: var(--bs-dropdown-link-active-color);
   text-decoration: none;
-  background-color: #311b0e;
+  background: radial-gradient(circle, #c0a68d 0, #896247 50%, #311b0e 100%);
+  border: 1px solid #f4dd9c;
+  color: #f4dd9c !important;
 }
