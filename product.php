@@ -200,9 +200,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                             src="assets/img/imported_images/female_profile.svg"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a
                                             class="dropdown-item" href="profile.php"><i
-                                                class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i> Profile</a><a
-                                            class="dropdown-item" href="inventory.php"><i
-                                                class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i> Activity log</a>
+                                                class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i> Profile</a>
                                         <div class="dropdown-divider"></div><a class="dropdown-item" href="logout.php"><i
                                                 class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i> Logout</a>
                                     </div>
