@@ -16,9 +16,6 @@ if ($conn) {
         echo '<script>alert("' . $_SESSION['message'] . '");</script>';
     }
 }
-?>
-
-<?php
 
 // if user is logged in, it means that the session variables are set or contain values. Then display the page
 if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['email']))

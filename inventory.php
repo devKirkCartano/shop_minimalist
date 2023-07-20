@@ -5,9 +5,6 @@ require_once("connect_db.php"); // include connection to database
 
 $sql = "SELECT * FROM products"; // select all from products table
 $result = mysqli_query($conn, $sql); // execute query
-?>
-
-<?php
 
 // if user is logged in, it means that the session variables are set or contain values. Then display the page
 if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['email']))
