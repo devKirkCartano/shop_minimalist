@@ -3,11 +3,6 @@ session_start(); // start session with the user who logged in
 
 require_once("connect_db.php"); // include connection to database
 
-
-?>
-
-<?php
-
 // if user is logged in, it means that the session variables are set or contain values. Then display the dashboard
 if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['email']))
 {
