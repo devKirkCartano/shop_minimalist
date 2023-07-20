@@ -1,8 +1,8 @@
 <?php
   $db_server_name = "localhost";
-  $db_user = "root";
-  $db_password = "";
-  $db_name = "shop_minimalist_db";
+  $db_user = "id21057423_admin";
+  $db_password = "shopminimalist@Admin123";
+  $db_name = "id21057423_shop_minimalist_db";
   $conn = ""; // variable to store the connection
 
   try{
