@@ -3,6 +3,19 @@ session_start(); // start session with the user who logged in
 
 require_once("connect_db.php"); // include connection to database
 
+$id = $_GET['id']; // get the id from the url
+
+// Select data associated with this particular id
+$result = mysqli_query($conn, "SELECT * FROM products WHERE id = $id");
+// Fetch the next row of a result set as an associative array
+$resultData = mysqli_fetch_assoc($result);
+
+$type = $resultData['type'];
+$model = $resultData['model'];
+$color = $resultData['color'];
+$quantity = $resultData['quantity'];
+$status = $resultData['status'];
+
 if ($conn) {
     if (isset($_POST['submit-btn'])){
         $type = mysqli_real_escape_string($conn, $_POST['type']); // store the type
@@ -214,7 +227,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                         <div class="row" style="margin-top: 50px;">
                             <div class="col-md-4">
                                 <select class="form-select" name="type" required>
-                                    <option value="" disabled selected>-- Select Type --</option>
+                                    <option value="<?php echo $type ?>" disabled selected> <?php echo $type ?></option>
                                     <option value="Side Table">Side Table</option>
                                     <option value="Wooden Chair">Wooden Chair</option>
                                     <option value="Bed Frame">Bed Frame</option>
@@ -225,7 +238,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                             </div>
                             <div class="col-md-4">
                                 <select class="form-select" name="model" required>
-                                    <option value="" disabled selected>-- Select Model --</option>
+                                    <option value="<?php echo $model ?>" disabled selected><?php echo $model ?></option>
                                     <option value="SHM-A">SHM-A</option>
                                     <option value="SHM-B">SHM-B</option>
                                     <option value="SHM-C">SHM-C</option>
@@ -236,7 +249,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                             </div>
                             <div class="col-md-4">
                                 <select class="form-select" name="color" required>
-                                    <option value="" disabled selected>-- Select Color -- </option>
+                                    <option value="<?php echo $color ?>" disabled selected><?php echo $color ?></option>
                                     <option value="Brown">Brown</option>
                                     <option value="White">White</option>
                                     <option value="Black">Black</option>
@@ -248,11 +261,11 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                         <div class="row" style="margin-top: 50px;">
                             <div class="col-md-4">
                                 <input class="form-control" type="number" name="quantity" min="1" max="100"
-                                    placeholder="-- Quantity --" required>
+                                    placeholder="-- Quantity --" value="<?php echo $quantity ?>" required>
                             </div>
                             <div class="col-md-4">
                                 <select class="form-select" name="status" required>
-                                    <option value="" disabled selected>-- Select Status</option>
+                                    <option value="<?php echo $status ?>" disabled selected><?php echo $status ?></option>
                                     <option value="New Arrival">New Arrival</option>
                                     <option value="Restock">Restock</option>
                                 </select>
