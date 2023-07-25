@@ -244,7 +244,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                                         <td><?php echo "<center>" . $row['quantity'] . "</center>" ?></td>
                                                         <td><?php echo "<center>" . $row['status'] . "</center>" ?></td>
                                                         <td><?php echo "<center>" .$row['timestamp'] . "</center>" ?></td>
-                                                        <td><?php echo "<center> <input class=\"btn btn-primary btn-save title-page-text\" type=\"submit\" name=\"submit-btn\" value=\"Edit\">" . "  |  " . "<input class=\"btn btn-primary btn-save title-page-text\" type=\"submit\" name=\"submit-btn\" value=\"Delete\"></center>"?></td>
+                                                        <td><?php echo "<center> <a href=\"edit.php?id=$row[id]\"> <input class=\"btn btn-primary btn-save title-page-text\" type=\"submit\" name=\"submit-btn\" value=\"Edit\"> </a>" . "  |  " . "<a href=\"delete.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\"> <input class=\"btn btn-primary btn-save title-page-text\" type=\"submit\" name=\"submit-btn\" value=\"Delete\"> </a></center>"?></td>
                                                     </tr>
                                             <?php
                                                 }
