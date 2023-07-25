@@ -201,6 +201,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
 
                     <!-- Page Heading -->
                     <h3 class="text-dark mb-4 title-page-text">Inventory</h3>
+                    
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4" id="table-bg">
                         <div class="card-header py-3" id="table-header">
@@ -208,6 +209,8 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                         </div>
                         <div class="card-body card-text">
                             <div class="table-responsive">
+                            <a href="product.php"><input class="btn btn-primary btn-save title-page-text" type="submit" name="submit-btn" value="Add Product"
+                            style="margin-bottom: 20px;"> </a>
                                 <table class="table table-bordered card-text" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
