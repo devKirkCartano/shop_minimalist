@@ -238,18 +238,19 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                                 while($row = mysqli_fetch_assoc($result)){
                                             ?>
                                                     <tr>
-                                                        <td><?php echo $row['type'] ?></td>
-                                                        <td><?php echo $row['model'] ?></td>
-                                                        <td><?php echo $row['color'] ?></td>
-                                                        <td><?php echo $row['quantity'] ?></td>
-                                                        <td><?php echo $row['status'] ?></td>
-                                                        <td><?php echo $row['timestamp'] ?></td>
+                                                        <td><?php echo "<center>" . $row['type'] . "</center>" ?></td>
+                                                        <td><?php echo "<center>" . $row['model'] . "</center>" ?></td>
+                                                        <td><?php echo "<center>" . $row['color'] . "</center>" ?></td>
+                                                        <td><?php echo "<center>" . $row['quantity'] . "</center>" ?></td>
+                                                        <td><?php echo "<center>" . $row['status'] . "</center>" ?></td>
+                                                        <td><?php echo "<center>" .$row['timestamp'] . "</center>" ?></td>
+                                                        <td><?php echo "<center> <input class=\"btn btn-primary btn-save title-page-text\" type=\"submit\" name=\"submit-btn\" value=\"Edit\">" . "  |  " . "<input class=\"btn btn-primary btn-save title-page-text\" type=\"submit\" name=\"submit-btn\" value=\"Delete\"></center>"?></td>
                                                     </tr>
                                             <?php
                                                 }
                                             }
                                                 mysqli_close($conn); // close connection
-                                            ?>
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
