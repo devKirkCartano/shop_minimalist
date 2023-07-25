@@ -241,8 +241,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                                         <td><?php echo $row['color'] ?></td>
                                                         <td><?php echo $row['quantity'] ?></td>
                                                         <td><?php echo $row['status'] ?></td>
-                                                        <td><?php echo $row['timestamp'] ?>
-                                                        </td>
+                                                        <td><?php echo $row['timestamp'] ?></td>
                                                     </tr>
                                             <?php
                                                 }
