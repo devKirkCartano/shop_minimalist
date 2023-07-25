@@ -14,6 +14,7 @@ if ($conn) {
         mysqli_query($conn, $sql); // execute the query
         $_SESSION['message'] = 'Product data has been added successfully!'; // store the message in session
         echo '<script>alert("' . $_SESSION['message'] . '");</script>';
+        echo '<script>window.location.href = "inventory.php";</script>';
     }
 }
 
