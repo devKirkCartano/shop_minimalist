@@ -274,7 +274,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                     </div><!-- End: 1 Row 3 Columns -->
                     <div class="justify-content-xxl-start align-items-xxl-end"
                         style="display: flex;flex-direction: row-reverse;margin: 0px;margin-right: 25px;margin-top: 200px;margin-bottom: 25px;">
-                        <input class="btn btn-primary btn-save title-page-text" type="submit" name="submit-btn" value="Update"
+                        <input class="btn btn-primary btn-save title-page-text" type="submit" name="update-btn" value="Update"
                             style="position: relative;display: flex;">
                     </div>
                 </form>
