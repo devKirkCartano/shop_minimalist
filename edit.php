@@ -222,12 +222,12 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4 title-page-text">Product</h3>
                 </div>
-                <form action="product.php" method="post"><!-- Start: 1 Row 3 Columns -->
+                <form action="editAction.php" method="post"><!-- Start: 1 Row 3 Columns -->
                     <div class="container">
                         <div class="row" style="margin-top: 50px;">
                             <div class="col-md-4">
                                 <select class="form-select" name="type" required>
-                                    <option value="<?php echo $type ?>" disabled selected> <?php echo $type ?></option>
+                                    <option value="<?php echo $type ?>"selected> <?php echo $type ?></option>
                                     <option value="Side Table">Side Table</option>
                                     <option value="Wooden Chair">Wooden Chair</option>
                                     <option value="Bed Frame">Bed Frame</option>
@@ -238,7 +238,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                             </div>
                             <div class="col-md-4">
                                 <select class="form-select" name="model" required>
-                                    <option value="<?php echo $model ?>" disabled selected><?php echo $model ?></option>
+                                    <option value="<?php echo $model ?>" selected><?php echo $model ?></option>
                                     <option value="SHM-A">SHM-A</option>
                                     <option value="SHM-B">SHM-B</option>
                                     <option value="SHM-C">SHM-C</option>
@@ -249,7 +249,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                             </div>
                             <div class="col-md-4">
                                 <select class="form-select" name="color" required>
-                                    <option value="<?php echo $color ?>" disabled selected><?php echo $color ?></option>
+                                    <option value="<?php echo $color ?>" selected><?php echo $color ?></option>
                                     <option value="Brown">Brown</option>
                                     <option value="White">White</option>
                                     <option value="Black">Black</option>
@@ -265,7 +265,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                             </div>
                             <div class="col-md-4">
                                 <select class="form-select" name="status" required>
-                                    <option value="<?php echo $status ?>" disabled selected><?php echo $status ?></option>
+                                    <option value="<?php echo $status ?>" selected><?php echo $status ?></option>
                                     <option value="New Arrival">New Arrival</option>
                                     <option value="Restock">Restock</option>
                                 </select>
@@ -274,6 +274,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                     </div><!-- End: 1 Row 3 Columns -->
                     <div class="justify-content-xxl-start align-items-xxl-end"
                         style="display: flex;flex-direction: row-reverse;margin: 0px;margin-right: 25px;margin-top: 200px;margin-bottom: 25px;">
+                        <input type="hidden" name="id" value=<?php echo $id; ?>>
                         <input class="btn btn-primary btn-save title-page-text" type="submit" name="update-btn" value="Update"
                             style="position: relative;display: flex;">
                     </div>
