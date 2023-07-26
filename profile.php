@@ -281,7 +281,7 @@ if (isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['e
 														</div>
 													</div>
 													<input type="hidden" name="id" value=<?php echo $id; ?>>
-													<div class="mb-3"><button class="btn btn-primary btn-sm btn-save card-text" name="update-btn" type="submit">Update
+													<div class="mb-3"><button class="btn btn-primary btn-sm btn-save card-text" name="update-btn" type="submit" onClick="return confirm('Are you sure you want to update your data?\n You will be logged out to validate the changes.')">Update
 															Profile</button></div>
 												</form>
 											</div>
