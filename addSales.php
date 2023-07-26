@@ -217,6 +217,21 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                     <div class="container">
                         <div class="row" style="margin-top: 50px;">
                             <div class="col-md-4">
+                                <input class="form-control" type="text" name="customer-name"  
+                                    placeholder="Customer Name" required>
+                            </div>
+                            <div class="col-md-4">
+                              <input class="form-control "type="date" id="start" name="trip-start"  min="2022-01-01" max="2023-12-31">
+                            </div>
+                            <div class="col-md-4">
+                                  <select class="form-select" name="type" required>
+                                    <option value="" disabled selected>-- Select Type of Shipment --</option>
+                                    <option value="Standard">Standard</option>
+                                    <option value="Priority">Prioity</option>
+                                    <option value="Overseas">Overseas</option>      
+                                </select>
+                            </div>
+                            <div class="col-md-4 " style="margin-top: 50px;" >
                                 <select class="form-select" name="type" required>
                                     <option value="" disabled selected>-- Select Type --</option>
                                     <option value="Side Table">Side Table</option>
@@ -227,7 +242,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                     <option value="Dining Table">Dining Table</option>
                                 </select>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4" style="margin-top: 50px;" >
                                 <select class="form-select" name="model" required>
                                     <option value="" disabled selected>-- Select Model --</option>
                                     <option value="SHM-A">SHM-A</option>
@@ -238,7 +253,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                     <option value="SHM-F">SHM-F</option>
                                 </select>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4" style="margin-top: 50px;" >
                                 <select class="form-select" name="color" required>
                                     <option value="" disabled selected>-- Select Color -- </option>
                                     <option value="Brown">Brown</option>
@@ -249,17 +264,16 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                         </div>
                     </div><!-- End: 1 Row 3 Columns --><!-- Start: 1 Row 3 Columns -->
                     <div class="container">
-                        <div class="row" style="margin-top: 50px;">
-                            <div class="col-md-4">
+                        <div class="row" style="margin-top: 50px;" >
+                            <div class="col-md-4" >
                                 <input class="form-control" type="number" name="quantity" min="1" max="100"
-                                    placeholder="-- Quantity --" required>
+                                    placeholder="Quantity" required>
                             </div>
                             <div class="col-md-4">
-                                <select class="form-select" name="status" required>
-                                    <option value="" disabled selected>-- Select Status</option>
-                                    <option value="New Arrival">New Arrival</option>
-                                    <option value="Restock">Restock</option>
-                                </select>
+                                <input class="form-control" type="number" name="amount" min="1" step="0.01" placeholder="Amount of Item" required>
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control" type="number" name="amount" min="1" step="0.01" placeholder="Total" required>
                             </div>
                         </div>
                     </div><!-- End: 1 Row 3 Columns -->
