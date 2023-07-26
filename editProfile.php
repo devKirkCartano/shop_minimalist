@@ -12,10 +12,7 @@ if (isset($_POST['update-btn'])) {
 
   // Update the database table
   $result = mysqli_query($conn, "UPDATE users SET `email` = '$email', `fname` = '$fname', `lname` = '$lname',  `last_updated` = CURRENT_TIMESTAMP WHERE `id` = $id");
-
-  // Display success message
-  echo '<script>alert("User updated successfully, You are forced to Logout to Validate the Changes")</script>';
   // Redirect to the view page
-  // echo '<script>window.location.href = "logout.php";</script>';
+  echo '<script>window.location.href = "logout.php";</script>';
 }
 ?>
