@@ -255,24 +255,24 @@ if (isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['e
 												<p class="text-primary m-0 fw-bold card-text">User Settings</p>
 											</div>
 											<div class="card-body bg-white">
-												<form>
+												<form method="post" action="editProfile.php">
 													<div class="row">
 														<div class="col">
 															<div class="mb-3"><label class="form-label card-text" for="email"><strong>Email
 																		Address</strong></label><input class="form-control" type="email" id="email"
-																	placeholder="<?php echo $_SESSION['email'] ?>" name="email"></div>
+																	placeholder="Email Address" value="<?php echo $_SESSION['email'] ?>" name="email"></div>
 														</div>
 													</div>
 													<div class="row">
 														<div class="col">
 															<div class="mb-3"><label class="form-label card-text" for="first_name"><strong>First
 																		Name</strong></label><input class="form-control" type="text" id="first_name"
-																	placeholder="<?php echo $_SESSION['fname'] ?>" name="first_name"></div>
+																	placeholder="First Name" value="<?php echo $_SESSION['fname'] ?>" name="first_name"></div>
 														</div>
 														<div class="col">
 															<div class="mb-3"><label class="form-label card-text" for="last_name"><strong>Last
 																		Name</strong></label><input class="form-control" type="text" id="last_name"
-																	placeholder="<?php echo $_SESSION['lname'] ?>" name="last_name"></div>
+																	placeholder="Last Name" value="<?php echo $_SESSION['lname'] ?>" name="last_name"></div>
 														</div>
 													</div>
 													<div class="mb-3"><button class="btn btn-primary btn-sm btn-save card-text" type="submit">Save
