@@ -291,24 +291,24 @@ if (isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['e
 												<p class="text-primary m-0 fw-bold card-text">Additional Information</p>
 											</div>
 											<div class="card-body bg-white">
-												<form>
+												<?php echo "<form method=\"post\" action=\"profile.php?id=$row[id]\">" ?>
 													<div class="mb-3"><label class="form-label card-text"
-															for="address"><strong>Address</strong></label><input class="form-control" type="text"
-															id="address" placeholder="Sunset Blvd, 38" name="address"></div>
+															for="username"><strong>Username</strong></label><input class="form-control" type="text"
+															id="username" placeholder="Username" name="username"></div>
 													<div class="row">
 														<div class="col">
 															<div class="mb-3"><label class="form-label card-text"
-																	for="city"><strong>City</strong></label><input class="form-control" type="text"
-																	id="city" placeholder="Los Angeles" name="city"></div>
+																	for="job-title"><strong>Job Title</strong></label><input class="form-control" type="text"
+																	id="job-title" placeholder="Job Title" name="job-title"></div>
 														</div>
 														<div class="col">
 															<div class="mb-3"><label class="form-label card-text"
-																	for="country"><strong>Country</strong></label><input class="form-control" type="text"
-																	id="country" placeholder="USA" name="country"></div>
+																	for="role"><strong>Role</strong></label><input class="form-control" type="text"
+																	id="role" placeholder="Role" name="role"></div>
 														</div>
 													</div>
 													<div class="mb-3"><button class="btn btn-primary btn-sm btn-save card-text"
-															type="submit">Save&nbsp;Settings</button></div>
+															type="submit" name="add-info-btn">Save Additional Info</button></div>
 												</form>
 											</div>
 										</div>
