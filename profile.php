@@ -275,8 +275,8 @@ if (isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['e
 																	placeholder="Last Name" value="<?php echo $_SESSION['lname'] ?>" name="last_name"></div>
 														</div>
 													</div>
-													<div class="mb-3"><button class="btn btn-primary btn-sm btn-save card-text" type="submit">Save
-															Settings</button></div>
+													<div class="mb-3"><button class="btn btn-primary btn-sm btn-save card-text" type="submit">Update
+															Profile</button></div>
 												</form>
 											</div>
 										</div>
