@@ -6,18 +6,16 @@ require_once("connect_db.php");
 if (isset($_POST['update-btn'])) {
   // Escape special characters in a string for use in an SQL statement
   $id = mysqli_real_escape_string($conn, $_POST['id']); // Assuming you have an input field with name="id" in the form.
-  $type = mysqli_real_escape_string($conn, $_POST['type']);
-  $model = mysqli_real_escape_string($conn, $_POST['model']);
-  $color = mysqli_real_escape_string($conn, $_POST['color']);
-  $quantity = mysqli_real_escape_string($conn, $_POST['quantity']);
-  $status = mysqli_real_escape_string($conn, $_POST['status']);
+  $email = mysqli_real_escape_string($conn, $_POST['email']);
+  $fname = mysqli_real_escape_string($conn, $_POST['first_name']);
+  $lname = mysqli_real_escape_string($conn, $_POST['last_name']);
 
   // Update the database table
-  $result = mysqli_query($conn, "UPDATE products SET `type` = '$type', `model` = '$model', `color` = '$color', `quantity` = $quantity, `status` = '$status', `last_updated` = CURRENT_TIMESTAMP WHERE `id` = $id");
+  $result = mysqli_query($conn, "UPDATE users SET `email` = '$email', `fname` = '$fname', `lname` = '$lname',  `last_updated` = CURRENT_TIMESTAMP WHERE `id` = $id");
 
   // Display success message
-  echo '<script>alert("Data updated successfully!")</script>';
+  echo '<script>alert("User updated successfully, You are forced to Logout to Validate the Changes")</script>';
   // Redirect to the view page
-  echo '<script>window.location.href = "inventory.php";</script>';
+  // echo '<script>window.location.href = "logout.php";</script>';
 }
 ?>
