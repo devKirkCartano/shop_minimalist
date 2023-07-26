@@ -257,7 +257,7 @@ if (isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['e
 									<div class="col">
 										<div class="card shadow mb-3">
 											<div class="card-header py-3 bg-white">
-												<p class="text-primary m-0 fw-bold card-text">User Settings</p>
+												<p class="text-primary m-0 fw-bold card-text">Admin Information</p>
 											</div>
 											<div class="card-body bg-white">
 												<form method="post" action="editProfile.php">
@@ -288,7 +288,7 @@ if (isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['e
 										</div>
 										<div class="card shadow">
 											<div class="card-header py-3 bg-white">
-												<p class="text-primary m-0 fw-bold card-text">Contact Settings</p>
+												<p class="text-primary m-0 fw-bold card-text">Additional Information</p>
 											</div>
 											<div class="card-body bg-white">
 												<form>
