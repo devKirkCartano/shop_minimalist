@@ -2,7 +2,9 @@
 session_start(); // start session with the user who logged in
 
 require_once("connect_db.php"); // include connection to database
-
+$sql = "SELECT * FROM users WHERE email = '" . $_SESSION['email'] . "'"; // query to select the user who logged in
+$result = mysqli_query($conn, $sql); // execute the query
+$row = mysqli_fetch_assoc($result); // fetch the result, or data in a row
 if ($conn) {
     if (isset($_POST['submit-btn'])){
         $type = mysqli_real_escape_string($conn, $_POST['type']); // store the type
@@ -196,9 +198,10 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                             id="name"><?php echo $_SESSION['fname'] . ' ' . $_SESSION['lname'] ?></span><img
                                             class="border rounded-circle img-profile"
                                             src="assets/img/imported_images/female_profile.svg"></a>
-                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a
-                                            class="dropdown-item" href="profile.php"><i
-                                                class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i> Profile</a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                                        <?php
+                                            echo "<a class=\"dropdown-item\" href=\"profile.php?id=$row[id]\"><i class=\"fas fa-user fa-sm fa-fw me-2 text-gray-400\"></i> Profile</a>";
+                                        ?>
                                         <div class="dropdown-divider"></div><a class="dropdown-item" href="logout.php"><i
                                                 class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i> Logout</a>
                                     </div>
