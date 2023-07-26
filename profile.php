@@ -258,11 +258,6 @@ if (isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['e
 												<form>
 													<div class="row">
 														<div class="col">
-															<div class="mb-3"><label class="form-label card-text"
-																	for="username"><strong>Username</strong></label><input class="form-control" type="text"
-																	id="username" placeholder="user.name" name="username"></div>
-														</div>
-														<div class="col">
 															<div class="mb-3"><label class="form-label card-text" for="email"><strong>Email
 																		Address</strong></label><input class="form-control" type="email" id="email"
 																	placeholder="<?php echo $_SESSION['email'] ?>" name="email"></div>
