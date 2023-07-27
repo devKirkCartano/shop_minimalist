@@ -234,7 +234,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                   <select class="form-select" name="shipment" required>
                                     <option value="" disabled selected>-- Select Type of Shipment --</option>
                                     <option value="Standard">Standard</option>
-                                    <option value="Priority">Prioity</option>
+                                    <option value="Priority">Priority</option>
                                     <option value="Overseas">Overseas</option>      
                                 </select>
                             </div>
