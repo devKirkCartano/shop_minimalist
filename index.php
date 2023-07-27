@@ -7,6 +7,22 @@ $sql = "SELECT * FROM users WHERE email = '" . $_SESSION['email'] . "'"; // quer
 $result = mysqli_query($conn, $sql); // execute the query
 $row = mysqli_fetch_assoc($result); // fetch the result, or data in a row
 
+// fetch standard shipping sales
+$sql_strd = "SELECT * FROM sales where shipment = 'Standard'";
+if ($result_strd = mysqli_query($conn, $sql_strd)) {
+  $rowcount_strd = mysqli_num_rows($result_strd);
+}
+
+// fetch prio shipping sales
+$sql_prio = "SELECT * FROM sales where shipment = 'Priority'";
+if ($result_prio = mysqli_query($conn, $sql_prio)) {
+  $rowcount_prio = mysqli_num_rows($result_prio);
+}
+
+$sql_ovs = "SELECT * FROM sales where shipment = 'Overseas'";
+if ($result_ovs = mysqli_query($conn, $sql_ovs)) {
+  $rowcount_ovs = mysqli_num_rows($result_ovs);
+}
 // if user is logged in, it means that the session variables are set or contain values. Then display the dashboard
 if (isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['email'])) {
 
@@ -1072,13 +1088,9 @@ series.labels.template.setAll({
 // Set data
 // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
 series.data.setAll([
-  { value: 10, category: "One" },
-  { value: 9, category: "Two" },
-  { value: 6, category: "Three" },
-  { value: 5, category: "Four" },
-  { value: 4, category: "Five" },
-  { value: 3, category: "Six" },
-  { value: 1, category: "Seven" },
+  { value: <?php echo $rowcount_strd ?>, category: "Standard" },
+  { value: <?php echo $rowcount_prio ?>, category: "Priority" },
+  { value: <?php echo $rowcount_ovs ?>, category: "Overseas" },
 ]);
 
 
@@ -1391,7 +1403,7 @@ series.appear(1000, 100);
                             <div class="col-lg-5 col-xl-5">
                                 <div class="card shadow mb-4 graph-bg">
                                     <div class="card-header d-flex justify-content-between align-items-center header-graph">
-                                        <h6 class="text-primary fw-bold m-0 graph-text">Sales Overview</h6>
+                                        <h6 class="text-primary fw-bold m-0 graph-text">Shipment Sales Overview</h6>
                                         <!-- <div class="dropdown no-arrow">
                                             <button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i
                                                     class="fas fa-ellipsis-v text-gray-400"></i></button>
