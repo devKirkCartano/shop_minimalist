@@ -23,6 +23,15 @@ $sql_ovs = "SELECT * FROM sales where shipment = 'Overseas'";
 if ($result_ovs = mysqli_query($conn, $sql_ovs)) {
   $rowcount_ovs = mysqli_num_rows($result_ovs);
 }
+
+$sql = "SELECT * FROM sales"; // select all from sales table
+$sale = mysqli_query($conn, $sql); // execute query
+if (mysqli_num_rows($sale) > 0) {
+    while($row = mysqli_fetch_assoc($sale)) {
+    echo '<script> alert("' . $row['date'] . '"); </script>';
+    echo '<script> alert("' . $row['total'] . '"); </script>';
+    }
+}
 // if user is logged in, it means that the session variables are set or contain values. Then display the dashboard
 if (isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['email'])) {
 
