@@ -48,6 +48,14 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+    <script>
+        function calculateTotal(value){
+            var quantity = document.getElementById("quantity").value;
+            var amount = document.getElementById("amount").value;
+
+            document.getElementById("total").value = quantity * amount;
+        }
+    </script>
 </head>
 
 <body id="page-top">
@@ -278,28 +286,16 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                     <div class="container">
                         <div class="row" style="margin-top: 50px;" >
                             <div class="col-md-4" >
-                                <input class="form-control" type="number" name="quantity" oninput="calculateTotal()" min="1" max="100"
+                                <input class="form-control" type="number" id="quantity" name="quantity" oninput="calculateTotal(this.value)"  min="1" max="100"
                                     placeholder="Quantity" required>
                             </div>
                             <div class="col-md-4">
-                                <input class="form-control" type="number" name="amount"  oninput="calculateTotal()" min="1" step="0.01" placeholder="Amount of Item" required>
+                                <input class="form-control" type="number" id="amount" name="amount" oninput="calculateTotal(this.value)"  min="1" step="0.01" placeholder="Amount of Item" required>
                             </div>
                             <div class="col-md-4">
-                                <!-- <input class="form-control" type="number" name="total" min="1" step="0.01" placeholder="Total" required> -->
-                                <!-- Add a hidden input field for the total -->
-                                <!-- <input type="hidden" id="total" name="total"> -->
+                                <input class="form-control" type="number" disabled id="total" name="total" placeholder="Total" readonly>
                             </div>
                         </div>
-                        <!-- <script>
-                            function calculateTotal() {
-                            var quantity = parseFloat(document.getElementById("quantity").value);
-                            var amount = parseFloat(document.getElementById("amount").value);
-                            var total = quantity * amount;
-                            
-                            document.getElementById("total").value = total;
-                            console.log("Total calculated:", total); // Add this line to check if it's being called
-                            }
-                        </script> -->
 
                     </div><!-- End: 1 Row 3 Columns -->
                     <div class="justify-content-xxl-start align-items-xxl-end"
