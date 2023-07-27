@@ -309,7 +309,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-5 col-xl-12">
+                            <div class="col-lg-5 col-xl-4">
                                 <div class="card shadow mb-4 graph-bg">
                                     <div class="card-header d-flex justify-content-between align-items-center header-graph">
                                         <h6 class="text-primary fw-bold m-0 graph-text">Stocks Sources</h6>
