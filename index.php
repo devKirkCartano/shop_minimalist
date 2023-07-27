@@ -26,10 +26,17 @@ if ($result_ovs = mysqli_query($conn, $sql_ovs)) {
 
 $sql = "SELECT * FROM sales"; // select all from sales table
 $sale = mysqli_query($conn, $sql); // execute query
+$row_sale = mysqli_fetch_assoc($sale);
+
+
+
+    
 if (mysqli_num_rows($sale) > 0) {
-    while($row = mysqli_fetch_assoc($sale)) {
-    // echo '<script> alert("' . $row['date'] . '"); </script>';
-    // echo '<script> alert("' . $row['total'] . '"); </script>';
+    while($row_sale = mysqli_fetch_assoc($sale)) {
+        $date = $row_sale['date'];
+        $total = $row_sale['total'];
+    // echo '<script> alert("' . $row_sale['date'] . '"); </script>';
+    // echo '<script> alert("' . $row_sale['total'] . '"); </script>';
     }
 }
 // if user is logged in, it means that the session variables are set or contain values. Then display the dashboard
@@ -190,10 +197,16 @@ if (isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['e
   });
 <?php
 
+    if (mysqli_num_rows($sale) > 0) {
+        while ($row_sale = mysqli_fetch_assoc($sale)) {
+                // echo '<script> alert("' . $row['date'] . '"); </script>';
+                // echo '<script> alert("' . $row['total'] . '"); </script>';
+        }
+    }
   echo "var data = ["; 
   echo "{";  
-  echo    "date: \"2012-07-27\",";
-  echo    "value: 13,";
+  echo    "date: \"$date\",";
+  echo    "value: $total,";
   echo "},";  
   echo "{";  
   echo    "date: \"2012-07-28\",";
