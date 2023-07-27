@@ -7,16 +7,23 @@ $result = mysqli_query($conn, $sql); // execute the query
 $row = mysqli_fetch_assoc($result); // fetch the result, or data in a row
 if ($conn) {
     if (isset($_POST['submit-btn'])){
-        $type = mysqli_real_escape_string($conn, $_POST['type']); // store the type
-        $model = mysqli_real_escape_string($conn, $_POST['model']); // store the model
-        $color = mysqli_real_escape_string($conn, $_POST['color']); // store the color
-        $quantity = mysqli_real_escape_string($conn, $_POST['quantity']); // store the quantity
-        $status = mysqli_real_escape_string($conn, $_POST['status']); // store the status
-        $sql = "INSERT INTO products (type, model, color, quantity, status ) VALUES('$type','$model','$color','$quantity', '$status')"; // query to insert data
+        $customer_name = mysqli_real_escape_string($conn, $_POST['customer-name']); // store the type
+        $date = mysqli_real_escape_string($conn, $_POST['date']); // store the model
+        $shipment = mysqli_real_escape_string($conn, $_POST['shipment']); // store the color
+        $type = mysqli_real_escape_string($conn, $_POST['type']); // store the quantity
+        $model = mysqli_real_escape_string($conn, $_POST['model']); // store the status
+        $color = mysqli_real_escape_string($conn, $_POST['color']); // store the status
+        $quantity = mysqli_real_escape_string($conn, $_POST['quantity']); // store the status
+        $amount = mysqli_real_escape_string($conn, $_POST['amount']); // store the status
+        $total = mysqli_real_escape_string($conn, $_POST['total']); // store the status
+        $sql = "INSERT INTO sales (customer_name, date, shipment, type, model, color, quantity, amount, total ) VALUES('$customer_name','$date','$shipment','$type', '$model', '$color', '$quantity', '$amount', '$total')"; // query to insert data
         mysqli_query($conn, $sql); // execute the query
-        $_SESSION['message'] = 'Product data has been added successfully!'; // store the message in session
+        // echo "Quantity: " . $_POST['quantity'] . "<br>";
+        // echo "Amount: " . $_POST['amount'] . "<br>";
+        // echo "Total: " . $_POST['total'] . "<br>";
+        $_SESSION['message'] = 'Sales data has been added successfully!'; // store the message in session
         echo '<script>alert("' . $_SESSION['message'] . '");</script>';
-        echo '<script>window.location.href = "inventory.php";</script>';
+        echo '<script>window.location.href = "salesInventory.php";</script>';
     }
 }
 
@@ -213,7 +220,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4 title-page-text">Sales</h3>
                 </div>
-                <form action="product.php" method="post"><!-- Start: 1 Row 3 Columns -->
+                <form action="addSales.php" method="post"><!-- Start: 1 Row 3 Columns -->
                     <div class="container">
                         <div class="row" style="margin-top: 50px;">
                             <div class="col-md-4">
@@ -221,10 +228,10 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                     placeholder="Customer Name" required>
                             </div>
                             <div class="col-md-4">
-                              <input class="form-control "type="date" id="start" name="trip-start"  min="2022-01-01" max="2023-12-31">
+                              <input class="form-control "type="date" name="date" min="2022-01-01" max="2023-7-31">
                             </div>
                             <div class="col-md-4">
-                                  <select class="form-select" name="type" required>
+                                  <select class="form-select" name="shipment" required>
                                     <option value="" disabled selected>-- Select Type of Shipment --</option>
                                     <option value="Standard">Standard</option>
                                     <option value="Priority">Prioity</option>
@@ -266,16 +273,29 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                     <div class="container">
                         <div class="row" style="margin-top: 50px;" >
                             <div class="col-md-4" >
-                                <input class="form-control" type="number" name="quantity" min="1" max="100"
+                                <input class="form-control" type="number" name="quantity" oninput="calculateTotal()" min="1" max="100"
                                     placeholder="Quantity" required>
                             </div>
                             <div class="col-md-4">
-                                <input class="form-control" type="number" name="amount" min="1" step="0.01" placeholder="Amount of Item" required>
+                                <input class="form-control" type="number" name="amount"  oninput="calculateTotal()" min="1" step="0.01" placeholder="Amount of Item" required>
                             </div>
                             <div class="col-md-4">
-                                <input class="form-control" type="number" name="amount" min="1" step="0.01" placeholder="Total" required>
+                                <input class="form-control" type="number" name="total" min="1" step="0.01" placeholder="Total" required>
+                                <!-- Add a hidden input field for the total -->
+                                <!-- <input type="hidden" id="total" name="total"> -->
                             </div>
                         </div>
+                        <!-- <script>
+                            function calculateTotal() {
+                            var quantity = parseFloat(document.getElementById("quantity").value);
+                            var amount = parseFloat(document.getElementById("amount").value);
+                            var total = quantity * amount;
+                            
+                            document.getElementById("total").value = total;
+                            console.log("Total calculated:", total); // Add this line to check if it's being called
+                            }
+                        </script> -->
+
                     </div><!-- End: 1 Row 3 Columns -->
                     <div class="justify-content-xxl-start align-items-xxl-end"
                         style="display: flex;flex-direction: row-reverse;margin: 0px;margin-right: 25px;margin-top: 200px;margin-bottom: 25px;">
