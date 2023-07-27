@@ -29,7 +29,11 @@ if ($conn) {
         $color = mysqli_real_escape_string($conn, $_POST['color']); // store the status
         $quantity = mysqli_real_escape_string($conn, $_POST['quantity']); // store the status
         $amount = mysqli_real_escape_string($conn, $_POST['amount']); // store the status
-        $total = mysqli_real_escape_string($conn, $_POST['total']); // store the status
+        // $total = mysqli_real_escape_string($conn, $_POST['total']); // store the status
+        $total = $quantity * $amount;
+
+        // Store the result in the `total` variable
+        $total = mysqli_real_escape_string($conn, $total);
         $sql = "INSERT INTO sales (customer_name, date, shipment, type, model, color, quantity, amount, total ) VALUES('$customer_name','$date','$shipment','$type', '$model', '$color', '$quantity', '$amount', '$total')"; // query to insert data
         mysqli_query($conn, $sql); // execute the query
         // echo "Quantity: " . $_POST['quantity'] . "<br>";
@@ -294,7 +298,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                 <input class="form-control" type="number" name="amount" value="<?php echo $amount ?>"  oninput="calculateTotal()" min="1" step="0.01" placeholder="Amount of Item" required>
                               </div>
                               <div class="col-md-4">
-                                  <input class="form-control" type="number" name="total" value="<?php echo $total ?>" min="1" step="0.01" placeholder="Total" required>
+                                  <!-- <input class="form-control" type="number" name="total" value="<?php echo $total ?>" min="1" step="0.01" placeholder="Total" required> -->
                                     <!-- Add a hidden input field for the total -->
                                     <!-- <input type="hidden" id="total" name="total"> -->
                                 </div>

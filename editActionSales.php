@@ -14,7 +14,11 @@ if (isset($_POST['update-sales-btn'])) {
   $color = mysqli_real_escape_string($conn, $_POST['color']); // store the status
   $quantity = mysqli_real_escape_string($conn, $_POST['quantity']); // store the status
   $amount = mysqli_real_escape_string($conn, $_POST['amount']); // store the status
-  $total = mysqli_real_escape_string($conn, $_POST['total']); // store the status
+  // $total = mysqli_real_escape_string($conn, $_POST['total']); // store the status
+  $total = $quantity * $amount;
+
+  // Store the result in the `total` variable
+  $total = mysqli_real_escape_string($conn, $total);
 
   // Update the database table
   $result = mysqli_query($conn, "UPDATE sales SET `customer_name` = '$customer_name', `date` = '$date', `shipment` = '$shipment', `type` = '$type', `model` = '$model', `color` = '$color', `quantity` = '$quantity', `amount` = '$amount', `total` = '$total', `last_updated` = CURRENT_TIMESTAMP  WHERE `id` = $id");
