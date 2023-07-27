@@ -926,3 +926,16 @@ a:hover {
   border: 1px solid #f4dd9c;
   color: #f4dd9c !important;
 }
+
+/* Style for pie chart */
+#pie {
+    width: 100%;
+    height: 500px;
+  }
+
+/* Style for sale overview chart */
+#sales {
+    width: 100%;
+    height: 500px;
+  }
+
