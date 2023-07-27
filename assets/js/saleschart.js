@@ -1,13 +1,13 @@
 am5.ready(function () {
-  // Create root element
+  // Create root1 element
   // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-  var root = am5.Root.new("sales");
+  var root1 = am5.Root.new("sales");
 
   // Set themes
   // https://www.amcharts.com/docs/v5/concepts/themes/
-  root.setThemes([am5themes_Animated.new(root)]);
+  root1.setThemes([am5themes_Animated.new(root1)]);
 
-  root.dateFormatter.setAll({
+  root1.dateFormatter.setAll({
     dateFormat: "yyyy",
     dateFields: ["valueX"],
   });
@@ -769,8 +769,8 @@ am5.ready(function () {
 
   // Create chart
   // https://www.amcharts.com/docs/v5/charts/xy-chart/
-  var chart = root.container.children.push(
-    am5xy.XYChart.new(root, {
+  var chart = root1.container.children.push(
+    am5xy.XYChart.new(root1, {
       focusable: true,
       panX: true,
       panY: true,
@@ -785,36 +785,36 @@ am5.ready(function () {
   // Create axes
   // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
   var xAxis = chart.xAxes.push(
-    am5xy.DateAxis.new(root, {
+    am5xy.DateAxis.new(root1, {
       maxDeviation: 0.1,
       groupData: false,
       baseInterval: {
         timeUnit: "day",
         count: 1,
       },
-      renderer: am5xy.AxisRendererX.new(root, {}),
-      tooltip: am5.Tooltip.new(root, {}),
+      renderer: am5xy.AxisRendererX.new(root1, {}),
+      tooltip: am5.Tooltip.new(root1, {}),
     })
   );
 
   var yAxis = chart.yAxes.push(
-    am5xy.ValueAxis.new(root, {
+    am5xy.ValueAxis.new(root1, {
       maxDeviation: 0.2,
-      renderer: am5xy.AxisRendererY.new(root, {}),
+      renderer: am5xy.AxisRendererY.new(root1, {}),
     })
   );
 
   // Add series
   // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
   var series = chart.series.push(
-    am5xy.LineSeries.new(root, {
+    am5xy.LineSeries.new(root1, {
       minBulletDistance: 10,
       connect: false,
       xAxis: xAxis,
       yAxis: yAxis,
       valueYField: "value",
       valueXField: "date",
-      tooltip: am5.Tooltip.new(root, {
+      tooltip: am5.Tooltip.new(root1, {
         pointerOrientation: "horizontal",
         labelText: "{valueY}",
       }),
@@ -832,7 +832,7 @@ am5.ready(function () {
 
   // Set up data processor to parse string dates
   // https://www.amcharts.com/docs/v5/concepts/data/#Pre_processing_data
-  series.data.processor = am5.DataProcessor.new(root, {
+  series.data.processor = am5.DataProcessor.new(root1, {
     dateFormat: "yyyy-MM-dd",
     dateFields: ["date"],
   });
@@ -840,14 +840,14 @@ am5.ready(function () {
   series.data.setAll(data);
 
   series.bullets.push(function () {
-    var circle = am5.Circle.new(root, {
+    var circle = am5.Circle.new(root1, {
       radius: 4,
-      fill: root.interfaceColors.get("background"),
+      fill: root1.interfaceColors.get("background"),
       stroke: series.get("fill"),
       strokeWidth: 2,
     });
 
-    return am5.Bullet.new(root, {
+    return am5.Bullet.new(root1, {
       sprite: circle,
     });
   });
@@ -856,7 +856,7 @@ am5.ready(function () {
   // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
   var cursor = chart.set(
     "cursor",
-    am5xy.XYCursor.new(root, {
+    am5xy.XYCursor.new(root1, {
       xAxis: xAxis,
       behavior: "none",
     })
@@ -866,7 +866,7 @@ am5.ready(function () {
   // add scrollbar
   chart.set(
     "scrollbarX",
-    am5.Scrollbar.new(root, {
+    am5.Scrollbar.new(root1, {
       orientation: "horizontal",
     })
   );
