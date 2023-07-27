@@ -1,18 +1,18 @@
 am5.ready(function () {
-  // Create root element
+  // Create root1 element
   // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-  var root = am5.Root.new("pie");
+  var root1 = am5.Root.new("pie");
 
   // Set themes
   // https://www.amcharts.com/docs/v5/concepts/themes/
-  root.setThemes([am5themes_Animated.new(root)]);
+  root1.setThemes([am5themes_Animated.new(root1)]);
 
   // Create chart
   // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/
   // start and end angle must be set both for chart and series
-  var chart = root.container.children.push(
-    am5percent.PieChart.new(root, {
-      layout: root.verticalLayout,
+  var chart = root1.container.children.push(
+    am5percent.PieChart.new(root1, {
+      layout: root1.verticalLayout,
       innerRadius: am5.percent(40),
     })
   );
@@ -21,14 +21,14 @@ am5.ready(function () {
   // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Series
   // start and end angle must be set both for chart and series
   var series0 = chart.series.push(
-    am5percent.PieSeries.new(root, {
+    am5percent.PieSeries.new(root1, {
       valueField: "bottles",
       categoryField: "country",
       alignLabels: false,
     })
   );
 
-  var bgColor = root.interfaceColors.get("background");
+  var bgColor = root1.interfaceColors.get("background");
 
   series0.ticks.template.setAll({ forceHidden: true });
   series0.labels.template.setAll({ forceHidden: true });
@@ -41,7 +41,7 @@ am5.ready(function () {
   series0.slices.template.states.create("hover", { scale: 0.95 });
 
   var series1 = chart.series.push(
-    am5percent.PieSeries.new(root, {
+    am5percent.PieSeries.new(root1, {
       valueField: "litres",
       categoryField: "country",
       alignLabels: true,
