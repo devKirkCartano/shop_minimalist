@@ -6,7 +6,7 @@ $usersql = "SELECT * FROM users WHERE email = '" . $_SESSION['email'] . "'"; // 
 $resultData = mysqli_query($conn, $usersql); // execute the query
 $rowUser = mysqli_fetch_assoc($resultData); // fetch the result, or data in a row
 
-$sql = "SELECT * FROM products"; // select all from products table
+$sql = "SELECT * FROM sales"; // select all from products table
 $result = mysqli_query($conn, $sql); // execute query
 
 // if user is logged in, it means that the session variables are set or contain values. Then display the page
@@ -218,25 +218,29 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                 <table class="table table-bordered card-text" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>Customer Name</th>
+                                            <th>Date</th>
+                                            <th>Type of Shipment</th>
                                             <th>Type</th>
                                             <th>Model</th>
                                             <th>Color</th>
                                             <th>Quantity</th>
-                                            <th>Status</th>
-                                            <th>Date Added</th>
-                                            <th>Last Updated</th>
+                                            <th>Amount</th>
+                                            <th>Total</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
+                                            <th>Customer Name</th>
+                                            <th>Date</th>
+                                            <th>Type of Shipment</th>
                                             <th>Type</th>
                                             <th>Model</th>
                                             <th>Color</th>
                                             <th>Quantity</th>
-                                            <th>Status</th>
-                                            <th>Date Added</th>
-                                            <td>Last Updated</td>
+                                            <th>Amount</th>
+                                            <th>Total</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
@@ -247,13 +251,15 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                                 while($row = mysqli_fetch_assoc($result)){
                                             ?>
                                                     <tr>
+                                                        <td><?php echo "<center>" . $row['customer_name'] . "</center>" ?></td>
+                                                        <td><?php echo "<center>" . $row['date'] . "</center>" ?></td>
+                                                        <td><?php echo "<center>" . $row['shipment'] . "</center>" ?></td>
                                                         <td><?php echo "<center>" . $row['type'] . "</center>" ?></td>
                                                         <td><?php echo "<center>" . $row['model'] . "</center>" ?></td>
-                                                        <td><?php echo "<center>" . $row['color'] . "</center>" ?></td>
-                                                        <td><?php echo "<center>" . $row['quantity'] . "</center>" ?></td>
-                                                        <td><?php echo "<center>" . $row['status'] . "</center>" ?></td>
-                                                        <td><?php echo "<center>" .$row['timestamp'] . "</center>" ?></td>
-                                                        <td><?php echo "<center>" .$row['last_updated'] . "</center>" ?></td>
+                                                        <td><?php echo "<center>" .$row['color'] . "</center>" ?></td>
+                                                        <td><?php echo "<center>" .$row['quantity'] . "</center>" ?></td>
+                                                        <td><?php echo "<center>" .$row['amount'] . "</center>" ?></td>
+                                                        <td><?php echo "<center>" .$row['total'] . "</center>" ?></td>
                                                         <td><?php echo "<center> <a href=\"edit.php?id=$row[id]\"> <input class=\"btn btn-primary btn-save title-page-text\" type=\"submit\" name=\"edit-btn\" value=\"Edit\"> </a>" . "  |  " . "<a href=\"delete.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\"> <input class=\"btn btn-primary btn-save title-page-text\" type=\"submit\" name=\"delete-btn\" value=\"Delete\"> </a></center>"?></td>
                                                     </tr>
                                             <?php
