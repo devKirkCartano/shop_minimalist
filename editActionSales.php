@@ -17,7 +17,7 @@ if (isset($_POST['update-sales-btn'])) {
   $total = mysqli_real_escape_string($conn, $_POST['total']); // store the status
 
   // Update the database table
-  $result = mysqli_query($conn, "UPDATE sales SET `customer_name` = '$customer_name', `date` = '$date', `shipment` = '$shipment', `type` = '$type', `model` = '$model', `color` = '$color', `quantity` = '$quantity', `amount` = '$amount', `total` = '$total'  WHERE `id` = $id");
+  $result = mysqli_query($conn, "UPDATE sales SET `customer_name` = '$customer_name', `date` = '$date', `shipment` = '$shipment', `type` = '$type', `model` = '$model', `color` = '$color', `quantity` = '$quantity', `amount` = '$amount', `total` = '$total', `last_updated` = CURRENT_TIMESTAMP  WHERE `id` = $id");
   // Display success message
   echo '<script>alert("Data updated successfully!")</script>';
   // Redirect to the view page
