@@ -62,7 +62,7 @@ $sql_dining = "SELECT type FROM sales where type = 'Dining Table'";
 if ($result_dining = mysqli_query($conn, $sql_dining)) {
     $rowcount_dining = mysqli_num_rows($result_dining);
 }
-echo '<script>alert("' . $rowcount_cab . '")</script>';
+
 $sql_sale = "SELECT date, total FROM `sales` ORDER BY `sales`.`date` ASC;"; // select date and total from sales table
 $sale = mysqli_query($conn, $sql_sale); // execute query
 $row_sale = mysqli_fetch_assoc($sale); // fetch the result, or data in a row
