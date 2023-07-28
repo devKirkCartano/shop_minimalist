@@ -24,6 +24,15 @@ if ($result_ovs = mysqli_query($conn, $sql_ovs)) {
   $rowcount_ovs = mysqli_num_rows($result_ovs);
 }
 
+$sql_new = "SELECT status FROM products where status = 'New Arrival'";
+if ($result_new = mysqli_query($conn, $sql_new)) {
+    $rowcount_new = mysqli_num_rows($result_new);
+}
+$sql_restock = "SELECT status FROM products where status = 'Restock'";
+if ($result_restock = mysqli_query($conn, $sql_restock)) {
+    $rowcount_restock = mysqli_num_rows($result_restock);
+}
+
 $sql_sale = "SELECT date, total FROM `sales` ORDER BY `sales`.`date` ASC;"; // select date and total from sales table
 $sale = mysqli_query($conn, $sql_sale); // execute query
 $row_sale = mysqli_fetch_assoc($sale); // fetch the result, or data in a row
@@ -580,65 +589,35 @@ series.appear(1000, 100);
                     </nav>
                     <div class="container-fluid">
                         <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                            <h3 class="text-dark mb-0 title-page-text">Dashboard</h3><a
+                            <h3 class="text-dark mb-0 title-page-text">Dashboard</h3>
+                            <!-- <a
                                 class="btn btn-primary btn-sm d-none d-sm-inline-block gen-report-color" role="button"
                                 id="btn-gen-report" href="#"><i
-                                    class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a>
+                                    class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a> -->
                         </div>
                         <div class="row">
-                            <div class="col-md-6 col-xl-3 mb-4">
-                                <div class="card shadow border-start-primary py-2 dashboard-card">
-                                    <div class="card-body">
-                                        <div class="row align-items-center no-gutters">
-                                            <div class="col me-2">
-                                                <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span
-                                                        class="card-text">Earnings (monthly)</span></div>
-                                                <div class="text-dark fw-bold h5 mb-0 text-dashboard"><span>$40,000</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-auto"><i
-                                                    class="fas fa-calendar fa-2x text-gray-300 icon-color"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xl-3 mb-4">
-                                <div class="card shadow border-start-success py-2 dashboard-card">
-                                    <div class="card-body">
-                                        <div class="row align-items-center no-gutters">
-                                            <div class="col me-2">
-                                                <div class="text-uppercase text-success fw-bold text-xs mb-1 c"><span
-                                                        class="card-text">Earnings (annual)</span></div>
-                                                <div class="text-dark fw-bold h5 mb-0 text-dashboard"><span>$215,000</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-auto"><i
-                                                    class="fas fa-dollar-sign fa-2x text-gray-300 icon-color"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xl-3 mb-4">
+
+                            <div class="col-md-6 col-xl-6 mb-4">
                                 <div class="card shadow border-start-info py-2 dashboard-card">
                                     <div class="card-body">
                                         <div class="row align-items-center no-gutters">
                                             <div class="col me-2">
                                                 <div class="text-uppercase text-info fw-bold text-xs mb-1"><span
-                                                        class="card-text">Tasks</span></div>
+                                                        class="card-text">New Arrival</span></div>
                                                 <div class="row g-0 align-items-center">
                                                     <div class="col-auto">
                                                         <div class="text-dark fw-bold h5 mb-0 me-3 text-dashboard">
-                                                            <span>50%</span>
+                                                            <span><?php echo $rowcount_new ?></span>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <!-- <div class="col">
                                                         <div class="progress progress-sm">
                                                             <div class="progress-bar bg-info" aria-valuenow="50"
                                                                 aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
                                                                 <span class="visually-hidden">50%</span>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                             <div class="col-auto"><i
@@ -647,14 +626,14 @@ series.appear(1000, 100);
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="col-md-6 col-xl-6 mb-4">
                                 <div class="card shadow border-start-warning py-2 dashboard-card">
                                     <div class="card-body">
                                         <div class="row align-items-center no-gutters">
                                             <div class="col me-2">
                                                 <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span
-                                                        class="card-text">New Arrival | Restock </span></div>
-                                                <div class="text-dark fw-bold h5 mb-0 text-dashboard"><span>18</span></div>
+                                                        class="card-text">Restock </span></div>
+                                                <div class="text-dark fw-bold h5 mb-0 text-dashboard"><span><?php echo $rowcount_restock ?></span></div>
                                             </div>
                                             <div class="col-auto"><i
                                                     class="fas fa-comments fa-2x text-gray-300 icon-color"></i></div>
