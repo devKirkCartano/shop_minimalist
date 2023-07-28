@@ -3,9 +3,6 @@ session_start(); // start session with the user who logged in
 
 require_once("connect_db.php"); // include connection to database
 
-?>
-
-<?php
 
 // fetch standard shipping sales
 $sql_strd = "SELECT * FROM sales where shipment = 'Standard'";
