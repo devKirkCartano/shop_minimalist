@@ -33,6 +33,36 @@ if ($result_restock = mysqli_query($conn, $sql_restock)) {
     $rowcount_restock = mysqli_num_rows($result_restock);
 }
 
+$sql_side_table = "SELECT type FROM sales where type = 'Side Table'";
+if ($result_side = mysqli_query($conn, $sql_side_table)) {
+    $rowcount_side = mysqli_num_rows($result_side);
+}
+
+$sql_wooden = "SELECT type FROM sales where type = 'Wooden Chair'";
+if ($result_wooden = mysqli_query($conn, $sql_wooden)) {
+    $rowcount_wooden = mysqli_num_rows($result_wooden);
+}
+
+$sql_bed = "SELECT type FROM sales where type = 'Bed Frame'";
+if ($result_bed = mysqli_query($conn, $sql_bed)) {
+    $rowcount_bed = mysqli_num_rows($result_bed);
+}
+
+$sql_cab = "SELECT type FROM sales where type = 'Cabinet / Wardrobe'";
+if ($result_cab = mysqli_query($conn, $sql_cab)) {
+    $rowcount_cab = mysqli_num_rows($result_cab);
+}
+
+$sql_stud = "SELECT type FROM sales where type = 'Study Table'";
+if ($result_stud = mysqli_query($conn, $sql_stud)) {
+    $rowcount_stud = mysqli_num_rows($result_stud);
+}
+
+$sql_dining = "SELECT type FROM sales where type = 'Dining Table'";
+if ($result_dining = mysqli_query($conn, $sql_dining)) {
+    $rowcount_dining = mysqli_num_rows($result_dining);
+}
+echo '<script>alert("' . $rowcount_cab . '")</script>';
 $sql_sale = "SELECT date, total FROM `sales` ORDER BY `sales`.`date` ASC;"; // select date and total from sales table
 $sale = mysqli_query($conn, $sql_sale); // execute query
 $row_sale = mysqli_fetch_assoc($sale); // fetch the result, or data in a row
@@ -124,55 +154,41 @@ if (isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['e
     stroke: bgColor,
     strokeWidth: 2,
     tooltipText:
-      "{category}: {valuePercentTotal.formatNumber('0.00')}% ({value} litres)",
+      "{category}: {valuePercentTotal.formatNumber('0.00')}% ({value} sold)",
   });
 
   var data = [
     {
-      country: "Lithuania",
-      litres: 501.9,
+      country: "Side Table",
+      litres: <?php echo $rowcount_side; ?>,
       bottles: 1500,
     },
     {
-      country: "Czech Republic",
-      litres: 301.9,
+      country: "Wooden Chair",
+      litres: <?php echo $rowcount_wooden; ?> ,
       bottles: 990,
     },
     {
-      country: "Ireland",
-      litres: 201.1,
+      country: "Bed Frame",
+      litres: <?php echo $rowcount_bed; ?>,
       bottles: 785,
     },
     {
-      country: "Germany",
-      litres: 165.8,
+      country: "Cabinet / Wardrobe",
+      litres: <?php echo $rowcount_cab; ?>,
       bottles: 255,
     },
     {
-      country: "Australia",
-      litres: 139.9,
+      country: "Study Table",
+      litres: <?php echo $rowcount_stud; ?>,
       bottles: 452,
     },
     {
-      country: "Austria",
-      litres: 128.3,
+      country: "Dining Table",
+      litres: <?php echo $rowcount_dining; ?>,
       bottles: 332,
     },
-    {
-      country: "UK",
-      litres: 99,
-      bottles: 150,
-    },
-    {
-      country: "Belgium",
-      litres: 60,
-      bottles: 178,
-    },
-    {
-      country: "The Netherlands",
-      litres: 50,
-      bottles: 50,
-    },
+    
   ];
 
   // Set data
