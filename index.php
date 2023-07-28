@@ -25,6 +25,25 @@ $sql_new = "SELECT status FROM products where status = 'New Arrival'";
 if ($result_new = mysqli_query($conn, $sql_new)) {
     $rowcount_new = mysqli_num_rows($result_new);
 }
+
+$sql_new = "SELECT quantity, status FROM products where status = 'New Arrival'";
+if ($result_new = mysqli_query($conn, $sql_new)) {
+    $sum_new = 0;
+    while ($row_data= mysqli_fetch_assoc($result_new)) {
+        $row_quantity_new = $row_data['quantity'];
+        $sum_new = $sum_new + $row_quantity_new;
+    }
+}
+
+$sql_restock = "SELECT quantity, status FROM products where status = 'Restock'";
+if ($result_restock = mysqli_query($conn, $sql_restock)) {
+    $sum_restock = 0;
+    while ($row_data = mysqli_fetch_assoc($result_restock)) {
+        $row_quantity_restock = $row_data['quantity'];
+        $sum_restock = $sum_restock + $row_quantity_restock;
+    }
+}
+
 $sql_restock = "SELECT status FROM products where status = 'Restock'";
 if ($result_restock = mysqli_query($conn, $sql_restock)) {
     $rowcount_restock = mysqli_num_rows($result_restock);
@@ -60,6 +79,8 @@ if ($result_dining = mysqli_query($conn, $sql_dining)) {
     $rowcount_dining = mysqli_num_rows($result_dining);
 }
 
+
+
 $sql_sale = "SELECT date, total FROM `sales` ORDER BY `sales`.`date` ASC;"; // select date and total from sales table
 $sale = mysqli_query($conn, $sql_sale); // execute query
 $row_sale = mysqli_fetch_assoc($sale); // fetch the result, or data in a row
@@ -70,7 +91,7 @@ $date = $row_sale['date']; // store date in variable
 // while ($row_sale = mysqli_fetch_assoc($sale)) {
 //     $date = $row_sale['date']; // store date in variable
 //     $total = $row_sale['total']; // store total in variable
-//     echo '<script>alert("' . $date . '")</script>';
+//     echo '<script>alert("' . $date . '")</scri>';
 //     echo '<script>alert("' . $total . '")</script>';
 // }
 // }
@@ -625,7 +646,7 @@ series.appear(1000, 100);
                                                 <div class="row g-0 align-items-center">
                                                     <div class="col-auto">
                                                         <div class="text-dark fw-bold h5 mb-0 me-3 text-dashboard">
-                                                            <span><?php echo $rowcount_new ?></span>
+                                                            <span><?php echo $sum_new ?></span>
                                                         </div>
                                                     </div>
                                                     <!-- <div class="col">
@@ -651,7 +672,7 @@ series.appear(1000, 100);
                                             <div class="col me-2">
                                                 <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span
                                                         class="card-text">Restock </span></div>
-                                                <div class="text-dark fw-bold h5 mb-0 text-dashboard"><span><?php echo $rowcount_restock ?></span></div>
+                                                <div class="text-dark fw-bold h5 mb-0 text-dashboard"><span><?php echo $sum_restock ?></span></div>
                                             </div>
                                             <div class="col-auto"><i
                                                     class="fas fa-comments fa-2x text-gray-300 icon-color"></i></div>
