@@ -717,7 +717,7 @@ series.appear(1000, 100);
                             <div class="col-lg-7 col-xl-12">
                                 <div class="card shadow mb-4 graph-bg">
                                     <div class="card-header d-flex justify-content-between align-items-center header-graph">
-                                        <h6 class="text-primary fw-bold m-0 graph-text">Stocks Sources</h6>
+                                        <h6 class="text-primary fw-bold m-0 graph-text">Sales Timeline</h6>
                                     </div>
                                     <div class="card-body">
                                         
