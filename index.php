@@ -138,7 +138,7 @@ if (isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['e
     stroke: bgColor,
     strokeWidth: 2,
     tooltipText:
-      "{category}: {valuePercentTotal.formatNumber('0.00')}% ({value} bottles)",
+      "{category}: {valuePercentTotal.formatNumber('0.00')}% ({value} sold)",
   });
   series0.slices.template.states.create("hover", { scale: 0.95 });
 
@@ -161,32 +161,32 @@ if (isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['e
     {
       country: "Side Table",
       litres: <?php echo $rowcount_side; ?>,
-      bottles: 1500,
+      bottles: <?php echo $rowcount_side; ?>,
     },
     {
       country: "Wooden Chair",
       litres: <?php echo $rowcount_wooden; ?> ,
-      bottles: 990,
+      bottles: <?php echo $rowcount_wooden; ?>,
     },
     {
       country: "Bed Frame",
       litres: <?php echo $rowcount_bed; ?>,
-      bottles: 785,
+      bottles: <?php echo $rowcount_bed; ?>,
     },
     {
       country: "Cabinet / Wardrobe",
       litres: <?php echo $rowcount_cab; ?>,
-      bottles: 255,
+      bottles: <?php echo $rowcount_cab; ?>,
     },
     {
       country: "Study Table",
       litres: <?php echo $rowcount_stud; ?>,
-      bottles: 452,
+      bottles: <?php echo $rowcount_stud; ?>,
     },
     {
       country: "Dining Table",
       litres: <?php echo $rowcount_dining; ?>,
-      bottles: 332,
+      bottles: <?php echo $rowcount_dining; ?>,
     },
     
   ];
