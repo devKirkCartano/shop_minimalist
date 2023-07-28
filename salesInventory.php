@@ -263,7 +263,7 @@ if(isset($_SESSION['fname']) && isset($_SESSION['lname']) && isset($_SESSION['em
                                                         <td><?php echo "<center>" .$row['amount'] . "</center>" ?></td>
                                                         <td><?php echo "<center>" .$row['total'] . "</center>" ?></td>
                                                         <td><?php echo "<center>" . $row['last_updated'] . "</center>" ?></td>
-                                                        <td><?php echo "<center> <a href=\"editSales.php?id=$row[id]\"> <input class=\"btn btn-primary btn-save title-page-text\" type=\"submit\" name=\"edit-btn\" value=\"Edit\"> </a>" . "  |  " . "<a href=\"deleteSales.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\"> <input class=\"btn btn-primary btn-save title-page-text\" type=\"submit\" name=\"delete-btn\" value=\"Delete\"> </a></center>"?></td>
+                                                        <td><?php echo "<center> <a href=\"editSales.php?id=$row[id]\"> <input class=\"btn btn-primary btn-save title-page-text\" type=\"submit\" name=\"edit-btn\" value=\"Edit\"> </a>" . " " . "<a href=\"deleteSales.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\"> <input class=\"btn btn-primary btn-save title-page-text\" type=\"submit\" name=\"delete-btn\" value=\"Delete\"> </a></center>"?></td>
                                                     </tr>
                                             <?php
                                                 }
