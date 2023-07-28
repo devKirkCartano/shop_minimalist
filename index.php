@@ -663,7 +663,7 @@ series.appear(1000, 100);
                             <div class="col-lg-5 col-xl-7">
                                 <div class="card shadow mb-4 graph-bg">
                                     <div class="card-header d-flex justify-content-between align-items-center header-graph">
-                                        <h6 class="text-primary fw-bold m-0 graph-text">Sales Overview</h6>
+                                        <h6 class="text-primary fw-bold m-0 graph-text">Current Sales In Demand</h6>
                                         <!-- <div class="dropdown no-arrow">
                                             <button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i
                                                     class="fas fa-ellipsis-v text-gray-400"></i></button>
@@ -690,7 +690,7 @@ series.appear(1000, 100);
                             <div class="col-lg-5 col-xl-5">
                                 <div class="card shadow mb-4 graph-bg">
                                     <div class="card-header d-flex justify-content-between align-items-center header-graph">
-                                        <h6 class="text-primary fw-bold m-0 graph-text">Shipment Sales Overview</h6>
+                                        <h6 class="text-primary fw-bold m-0 graph-text">Shipment Sales</h6>
                                         <!-- <div class="dropdown no-arrow">
                                             <button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i
                                                     class="fas fa-ellipsis-v text-gray-400"></i></button>
